@@ -126,7 +126,7 @@ function Index() {
         gsap.fromTo("[data-panel]", { clipPath: "inset(12% 4% 0% 4%)" }, { clipPath: "inset(0% 0% 0% 0%)", ease: "none", scrollTrigger: { trigger: "[data-panel]", start: "top bottom", end: "top 30%", scrub: true } });
         // Stats count
         gsap.utils.toArray<HTMLElement>("[data-count]:not([data-count=''])").forEach((el) => {
-          const end = Number(el.dataset.count);
+          const end = Number(el.dataset["count"]);
           const o = { v: 0 };
           gsap.to(o, { v: end, duration: 2, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 85%", once: true }, onUpdate: () => (el.textContent = String(Math.round(o.v))) });
         });

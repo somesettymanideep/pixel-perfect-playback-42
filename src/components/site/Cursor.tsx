@@ -109,7 +109,6 @@ export function Cursor() {
               }}
             />
           ))}
-          <div className="absolute left-0 top-[14px] h-[18px] w-[18px] bg-charcoal" style={{ transform: "rotateX(90deg) translateZ(-2px)" }} />
         </div>
         <span ref={label} className="absolute left-5 top-0 text-[10px] uppercase tracking-[0.3em] text-ivory opacity-0 transition-opacity">View</span>
       </div>

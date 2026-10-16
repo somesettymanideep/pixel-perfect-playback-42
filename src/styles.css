@@ -91,7 +91,7 @@
 }
 @utility text-outline {
   color: transparent;
-  -webkit-text-stroke: 1px currentColor;
+  -webkit-text-stroke: 1px var(--ivory);
 }
 @utility bg-overlay { background: var(--overlay); }
 @utility grid-lines {
@@ -103,7 +103,7 @@
   width: 100%;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid var(--input);
+  border-bottom: 1px solid color-mix(in oklch, currentColor 30%, transparent);
   padding: 0.75rem 0;
   color: inherit;
   transition: border-color 0.3s;
