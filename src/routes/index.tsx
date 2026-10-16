@@ -125,7 +125,7 @@ function Index() {
         // Ivory panel reveal
         gsap.fromTo("[data-panel]", { clipPath: "inset(12% 4% 0% 4%)" }, { clipPath: "inset(0% 0% 0% 0%)", ease: "none", scrollTrigger: { trigger: "[data-panel]", start: "top bottom", end: "top 30%", scrub: true } });
         // Stats count
-        gsap.utils.toArray<HTMLElement>("[data-count]").forEach((el) => {
+        gsap.utils.toArray<HTMLElement>("[data-count]:not([data-count=''])").forEach((el) => {
           const end = Number(el.dataset.count);
           const o = { v: 0 };
           gsap.to(o, { v: end, duration: 2, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 85%", once: true }, onUpdate: () => (el.textContent = String(Math.round(o.v))) });
@@ -256,7 +256,7 @@ function Index() {
                     <circle data-ring cx="55" cy="55" r="54" fill="none" stroke="var(--bronze)" strokeWidth="0.4" strokeDasharray="340" />
                   </svg>
                   <div className="relative flex h-32 items-center font-display text-6xl font-light md:h-40 md:text-8xl">
-                    <span data-count={s.v}>{s.v}</span>
+                    <span data-count={s.v || undefined}>{s.v || "—"}</span>
                     <span className="ml-1 font-sans text-sm text-teal md:text-base">{s.suffix}</span>
                   </div>
                   <p className="relative mt-6 text-[0.68rem] uppercase tracking-[0.3em] text-ivory-foreground/60">{s.l}</p>

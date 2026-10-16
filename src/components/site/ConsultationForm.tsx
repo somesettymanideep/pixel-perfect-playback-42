@@ -13,6 +13,20 @@ export function validateConsultation(data: Record<string, string>): Errors {
   return e;
 }
 
+
+function F({ name, label, type = "text", optional, errors }: { name: string; label: string; type?: string; optional?: boolean; errors: Errors }) {
+  return (
+    <div>
+      <label htmlFor={name} className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory-foreground/60">
+        {label} {optional && <span className="normal-case tracking-normal">(optional)</span>}
+      </label>
+      <input id={name} name={name} type={type} className="field" aria-invalid={!!errors[name]} aria-describedby={errors[name] ? `${name}-err` : undefined} />
+      {errors[name] && <p id={`${name}-err`} className="mt-2 text-xs text-destructive">{errors[name]}</p>}
+    </div>
+  );
+}
+
+
 export function ConsultationForm() {
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "sending" | "done">("idle");
@@ -43,21 +57,11 @@ export function ConsultationForm() {
       </div>
     );
 
-  const F = ({ name, label, type = "text", optional }: { name: string; label: string; type?: string; optional?: boolean }) => (
-    <div>
-      <label htmlFor={name} className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory-foreground/60">
-        {label} {optional && <span className="normal-case tracking-normal">(optional)</span>}
-      </label>
-      <input id={name} name={name} type={type} className="field" aria-invalid={!!errors[name]} aria-describedby={errors[name] ? `${name}-err` : undefined} />
-      {errors[name] && <p id={`${name}-err`} className="mt-2 text-xs text-destructive">{errors[name]}</p>}
-    </div>
-  );
-
   return (
     <form noValidate onSubmit={onSubmit} className="grid gap-8 sm:grid-cols-2">
-      <F name="name" label="Name" />
-      <F name="email" label="Email" type="email" />
-      <F name="phone" label="Phone" type="tel" optional />
+      <F errors={errors} name="name" label="Name" />
+      <F errors={errors} name="email" label="Email" type="email" />
+      <F errors={errors} name="phone" label="Phone" type="tel" optional />
       <div>
         <label htmlFor="projectType" className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory-foreground/60">Project type</label>
         <select id="projectType" name="projectType" defaultValue="" className="field" aria-invalid={!!errors.projectType} aria-describedby={errors.projectType ? "projectType-err" : undefined}>
@@ -69,7 +73,7 @@ export function ConsultationForm() {
         </select>
         {errors.projectType && <p id="projectType-err" className="mt-2 text-xs text-destructive">{errors.projectType}</p>}
       </div>
-      <F name="location" label="Project location" />
+      <F errors={errors} name="location" label="Project location" />
       <div>
         <label htmlFor="budget" className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory-foreground/60">Estimated budget <span className="normal-case tracking-normal">(optional)</span></label>
         <select id="budget" name="budget" defaultValue="" className="field">
