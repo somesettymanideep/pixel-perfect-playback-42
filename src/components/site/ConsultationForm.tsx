@@ -6,10 +6,10 @@ const required = ["name", "email", "projectType", "location", "details"];
 export function validateConsultation(data: Record<string, string>): Errors {
   const e: Errors = {};
   for (const k of required) if (!data[k]?.trim()) e[k] = "This field is required.";
-  if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) e.email = "Please enter a valid email address.";
-  if (data.phone && !/^[+\d][\d\s()-]{6,}$/.test(data.phone)) e.phone = "Please enter a valid phone number.";
-  if (data.details && data.details.trim().length > 0 && data.details.trim().length < 20)
-    e.details = "Tell us a little more — at least 20 characters.";
+  if (data["email"] && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data["email"])) e["email"] = "Please enter a valid email address.";
+  if (data["phone"] && !/^[+\d][\d\s()-]{6,}$/.test(data["phone"])) e["phone"] = "Please enter a valid phone number.";
+  if (data["details"] && data["details"].trim().length > 0 && data["details"].trim().length < 20)
+    e["details"] = "Tell us a little more — at least 20 characters.";
   return e;
 }
 
