@@ -64,14 +64,14 @@ export function ConsultationForm() {
       <F errors={errors} name="phone" label="Phone" type="tel" optional />
       <div>
         <label htmlFor="projectType" className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory-foreground/60">Project type</label>
-        <select id="projectType" name="projectType" defaultValue="" className="field" aria-invalid={!!errors.projectType} aria-describedby={errors.projectType ? "projectType-err" : undefined}>
+        <select id="projectType" name="projectType" defaultValue="" className="field" aria-invalid={!!errors["projectType"]} aria-describedby={errors["projectType"] ? "projectType-err" : undefined}>
           <option value="" disabled>Select</option>
           <option>Architecture Design</option>
           <option>Interior Design</option>
           <option>Landscape Design</option>
           <option>Turnkey Execution</option>
         </select>
-        {errors.projectType && <p id="projectType-err" className="mt-2 text-xs text-destructive">{errors.projectType}</p>}
+        {errors["projectType"] && <p id="projectType-err" className="mt-2 text-xs text-destructive">{errors["projectType"]}</p>}
       </div>
       <F errors={errors} name="location" label="Project location" />
       <div>
@@ -86,8 +86,8 @@ export function ConsultationForm() {
       </div>
       <div className="sm:col-span-2">
         <label htmlFor="details" className="text-[0.68rem] uppercase tracking-[0.28em] text-ivory-foreground/60">Project details</label>
-        <textarea id="details" name="details" rows={4} className="field resize-none" aria-invalid={!!errors.details} aria-describedby={errors.details ? "details-err" : undefined} />
-        {errors.details && <p id="details-err" className="mt-2 text-xs text-destructive">{errors.details}</p>}
+        <textarea id="details" name="details" rows={4} className="field resize-none" aria-invalid={!!errors["details"]} aria-describedby={errors["details"] ? "details-err" : undefined} />
+        {errors["details"] && <p id="details-err" className="mt-2 text-xs text-destructive">{errors["details"]}</p>}
       </div>
       <div className="sm:col-span-2">
         <button type="submit" disabled={status === "sending"} className="btn-solid disabled:opacity-60">

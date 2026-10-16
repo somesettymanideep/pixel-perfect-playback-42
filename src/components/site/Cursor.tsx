@@ -67,12 +67,12 @@ export function Cursor() {
 
       const now = performance.now();
       if (vel > 0.6 && visible && !reduce) trail.push({ x: p.x, y: p.y, t: now });
-      while (trail.length && now - trail[0].t > 260) trail.shift();
+      while (trail[0] && now - trail[0].t > 260) trail.shift();
       ctx.clearRect(0, 0, innerWidth, innerHeight);
-      for (let i = 1; i < trail.length; i++) {
-        const a = 1 - (now - trail[i].t) / 260;
+      for (let i = 1; i < trail.length; i++) { const a0 = trail[i - 1]!, a1 = trail[i]!;
+        const a = 1 - (now - a1.t) / 260;
         ctx.strokeStyle = teal; ctx.globalAlpha = a * 0.55; ctx.lineWidth = a * 1.5;
-        ctx.beginPath(); ctx.moveTo(trail[i - 1].x, trail[i - 1].y); ctx.lineTo(trail[i].x, trail[i].y); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(a0.x, a0.y); ctx.lineTo(a1.x, a1.y); ctx.stroke();
       }
       ctx.globalAlpha = 1;
       raf = requestAnimationFrame(tick);
