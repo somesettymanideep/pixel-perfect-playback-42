@@ -39,32 +39,32 @@
 
 :root {
   --radius: 0.125rem;
-  --charcoal: oklch(0.17 0.004 60);
-  --ivory: oklch(0.95 0.018 85);
-  --ivory-foreground: oklch(0.2 0.006 60);
-  --bronze: oklch(0.68 0.08 65);
-  --teal: oklch(0.58 0.09 200);
+  --charcoal: oklch(0.17 0.025 220);
+  --ivory: oklch(0.985 0.004 210);
+  --ivory-foreground: oklch(0.22 0.04 220);
+  --bronze: oklch(0.68 0.07 215); /* logo light teal #5CA5B7 */
+  --teal: oklch(0.52 0.1 220); /* logo teal #017890 */
   --background: var(--charcoal);
   --foreground: var(--ivory);
-  --card: oklch(0.21 0.005 60);
+  --card: oklch(0.21 0.03 220);
   --card-foreground: var(--ivory);
-  --popover: oklch(0.21 0.005 60);
+  --popover: oklch(0.21 0.03 220);
   --popover-foreground: var(--ivory);
   --primary: var(--bronze);
-  --primary-foreground: oklch(0.15 0.004 60);
-  --secondary: oklch(0.25 0.005 60);
+  --primary-foreground: oklch(0.15 0.03 220);
+  --secondary: oklch(0.25 0.035 220);
   --secondary-foreground: var(--ivory);
-  --muted: oklch(0.25 0.005 60);
-  --muted-foreground: oklch(0.72 0.015 80);
+  --muted: oklch(0.25 0.035 220);
+  --muted-foreground: oklch(0.78 0.03 215);
   --accent: var(--teal);
   --accent-foreground: var(--ivory);
   --destructive: oklch(0.65 0.18 28);
   --destructive-foreground: var(--ivory);
-  --border: oklch(0.95 0.018 85 / 14%);
-  --line: oklch(0.95 0.018 85 / 7%);
-  --input: oklch(0.95 0.018 85 / 30%);
+  --border: oklch(0.985 0.004 210 / 14%);
+  --line: oklch(0.985 0.004 210 / 7%);
+  --input: oklch(0.985 0.004 210 / 30%);
   --ring: var(--teal);
-  --overlay: linear-gradient(180deg, oklch(0.12 0.004 60 / 70%) 0%, oklch(0.12 0.004 60 / 35%) 45%, oklch(0.12 0.004 60 / 92%) 100%);
+  --overlay: linear-gradient(180deg, oklch(0.12 0.025 220 / 70%) 0%, oklch(0.12 0.025 220 / 35%) 45%, oklch(0.12 0.025 220 / 92%) 100%);
 }
 
 @layer base {
