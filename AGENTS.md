@@ -15,3 +15,4 @@
 - About section: keep the homepage studio introduction in a dedicated presentation component using the home route's shared reveal hooks, so the existing scroll lifecycle remains centralized.
 - Footer: keep footer presentation in its own component, use existing section anchors, and leave unavailable external or legal destinations disabled rather than inventing URLs.
 - Consultation: keep the FAQ and form split in a dedicated presentation component using shared home reveal hooks; preserve submission behavior when changing its layout.
+- Testimonials: keep the quotes slideshow in its own presentation component that takes the entries as a prop; show several cards per view and advance one card at a time, measuring travel from real card widths and offering native horizontal browsing for reduced motion.
