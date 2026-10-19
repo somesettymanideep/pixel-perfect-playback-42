@@ -34,7 +34,7 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
             <p className="mb-3 text-xs uppercase text-brand-teal">Portfolio</p>
             <h2 id="projects-heading" className="font-display text-5xl font-light leading-none md:text-7xl"><span className="block text-brand-gradient">Our Projects</span></h2>
           </div>
-          <span aria-hidden className="font-display text-7xl leading-none text-brand-deep/10 md:text-8xl">.03</span>
+          <span aria-hidden className="font-display text-7xl leading-none text-brand-deep/18 md:text-8xl">.03</span>
         </div>
         <div data-project-viewport className="project-viewport relative" onScroll={(event) => {
           if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -73,7 +73,7 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
               </Button>
             ))}
           </div>
-          <div className="hidden h-px max-w-80 flex-1 overflow-hidden bg-border sm:block" aria-hidden>
+          <div className="hidden h-px max-w-80 flex-1 overflow-hidden bg-brand-deep/22 sm:block" aria-hidden>
             <span data-project-progress className="block h-full origin-left bg-brand-teal" />
           </div>
           <div className="flex items-center gap-3">
