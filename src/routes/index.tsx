@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Cursor } from "@/components/site/Cursor";
 import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { ProjectsGallery } from "@/components/site/ProjectsGallery";
+import { AboutSection } from "@/components/site/AboutSection";
 import logo from "@/assets/sea-logo.png.asset.json";
 import hero from "@/assets/hero.jpg";
 import sArch from "@/assets/s-arch.jpg";
@@ -251,6 +252,8 @@ function Index() {
         </section>
 
         {/* SERVICES */}
+        <AboutSection />
+
         <section id="services" tabIndex={-1} className="panel-light relative bg-services-bg text-ink">
           <div className="pointer-events-none absolute inset-0 grid-lines" />
           <div className="relative mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
