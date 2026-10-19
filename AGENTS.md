@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Scroll choreography: one Lenis instance driven by the GSAP ticker plus ScrollTrigger, set up in the home route; pins use CSS sticky to avoid jitter.
+- Panel treatments: pale sections use `.panel-light`, navy sections use `.panel-deep`; both retint the shared border/accent tokens, so section markup uses semantic color classes and never hardcodes brand hexes.

@@ -126,16 +126,15 @@ function Index() {
           const img = el.querySelector("img");
           if (img) gsap.fromTo(img, { scale: 1.25, yPercent: -6 }, { scale: 1.05, yPercent: 6, ease: "none", scrollTrigger: { trigger: el, start: "top bottom", end: "bottom top", scrub: true } });
         });
-        // Ivory panel reveal
-        gsap.fromTo("[data-panel]", { clipPath: "inset(12% 4% 0% 4%)" }, { clipPath: "inset(0% 0% 0% 0%)", ease: "none", scrollTrigger: { trigger: "[data-panel]", start: "top bottom", end: "top 30%", scrub: true } });
+        // Figure rows: the hairline above each row draws itself in from the left
+        gsap.utils.toArray<HTMLElement>("[data-bar]").forEach((el) => {
+          gsap.fromTo(el, { scaleX: 0 }, { scaleX: 1, transformOrigin: "left center", duration: 1.8, ease: "power3.inOut", scrollTrigger: { trigger: el, start: "top 92%", toggleActions: "play none none reverse" } });
+        });
         // Stats count
         gsap.utils.toArray<HTMLElement>("[data-count]:not([data-count=''])").forEach((el) => {
           const end = Number(el.dataset["count"]);
           const o = { v: 0 };
           gsap.to(o, { v: end, duration: 2, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 85%", once: true }, onUpdate: () => (el.textContent = String(Math.round(o.v))) });
-        });
-        gsap.utils.toArray<HTMLElement>("[data-ring]").forEach((el, i) => {
-          gsap.fromTo(el, { strokeDashoffset: 340 }, { strokeDashoffset: 0, duration: 2, delay: i * 0.12, ease: "power2.inOut", scrollTrigger: { trigger: el, start: "top 85%", once: true } });
         });
         // Project stack: previous card dims & recedes as next overlaps
         const cards = gsap.utils.toArray<HTMLElement>("[data-card]");
@@ -249,25 +248,64 @@ function Index() {
         </section>
 
         {/* STATS */}
-        <section id="stats" tabIndex={-1} data-panel className="bg-ivory text-ivory-foreground">
-          <div className="mx-auto max-w-[1600px] px-6 py-28 md:px-12 md:py-36">
-            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <p className="label-num !text-teal">02 — The Studio</p>
-              <p className="max-w-sm text-sm text-ivory-foreground/60">Figures shown are placeholders, to be updated with the studio's verified numbers.</p>
+        <section id="stats" tabIndex={-1} className="panel-deep relative overflow-hidden bg-brand-deep">
+          <div className="grid-lines pointer-events-none absolute inset-0 opacity-50" />
+          <div className="bg-teal-glow pointer-events-none absolute -left-64 top-1/2 h-[44rem] w-[44rem] -translate-y-1/2" aria-hidden />
+          <span className="reg-mark left-6 top-6 hidden md:block" aria-hidden />
+          <span className="reg-mark right-6 top-6 hidden md:block" aria-hidden />
+          <span className="reg-mark bottom-6 left-6 hidden md:block" aria-hidden />
+          <span className="reg-mark bottom-6 right-6 hidden md:block" aria-hidden />
+          <div className="relative mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
+            <div className="md:col-span-5">
+              <div className="md:sticky md:top-32">
+                <p className="label-num">02 — The Studio</p>
+                <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl lg:text-8xl">
+                  <span className="mask-line"><span className="text-brand-gradient-pale block">The Studio,</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient-pale block italic">measured.</span></span>
+                </h2>
+                <p data-reveal className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground">
+                  A working record of what the studio has made and how it works — light, material, time.
+                </p>
+                <div data-line className="mt-10 h-px w-24 bg-brand-teal" />
+                <p data-reveal className="mt-6 max-w-xs text-xs leading-relaxed text-muted-foreground">
+                  Figures shown are placeholders, to be replaced with the studio's verified numbers.
+                </p>
+              </div>
             </div>
-            <div className="mt-16 grid grid-cols-2 gap-y-16 md:grid-cols-4">
-              {STATS.map((s) => (
-                <div key={s.l} className="relative flex flex-col items-center text-center">
-                  <svg className="absolute -top-6 h-44 w-44 md:h-52 md:w-52" viewBox="0 0 110 110" aria-hidden>
-                    <circle data-ring cx="55" cy="55" r="54" fill="none" stroke="var(--bronze)" strokeWidth="0.4" strokeDasharray="340" />
-                  </svg>
-                  <div className="relative flex h-32 items-center font-display text-6xl font-light md:h-40 md:text-8xl">
-                    <span data-count={s.v || undefined}>{s.v || "—"}</span>
-                    <span className="ml-1 font-sans text-sm text-teal md:text-base">{s.suffix}</span>
+            <div className="md:col-span-7">
+              <div className="border-b border-border">
+                {STATS.map((s, i) => (
+                  <div key={s.l} data-reveal className="group relative border-t border-border py-9 md:py-11">
+                    <span data-bar className="absolute inset-x-0 top-0 h-px origin-left bg-brand-teal" aria-hidden />
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
+                      <div className="flex items-baseline gap-4">
+                        <span className="font-sans text-[0.62rem] tracking-[0.3em] text-brand-teal">0{i + 1}</span>
+                        <span className="font-display text-6xl font-light leading-[0.8] transition-colors duration-500 group-hover:text-teal-lift md:text-8xl">
+                          <span data-count={s.v || undefined}>{s.v || "—"}</span>
+                        </span>
+                        {s.suffix ? <span className="font-sans text-[0.68rem] uppercase tracking-[0.28em] text-teal-lift">{s.suffix}</span> : null}
+                      </div>
+                      <p className="text-[0.68rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors duration-500 group-hover:text-services-bg">{s.l}</p>
+                    </div>
                   </div>
-                  <p className="relative mt-6 text-[0.68rem] uppercase tracking-[0.3em] text-ivory-foreground/60">{s.l}</p>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="ticker-mask relative overflow-hidden border-y border-border py-4">
+            <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+              <div className="ticker-track">
+                {[0, 1].map((k) => (
+                  <div key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
+                    {SERVICES.map((s) => (
+                      <span key={s.t} className="flex items-center whitespace-nowrap text-[0.66rem] uppercase tracking-[0.3em] text-teal-lift">
+                        {s.t}
+                        <span className="mx-8 text-brand-teal">◆</span>
+                      </span>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
