@@ -110,7 +110,7 @@ export function Cursor() {
             />
           ))}
         </div>
-        <span ref={label} className="absolute left-5 top-0 text-[10px] uppercase tracking-[0.3em] text-ivory opacity-0 transition-opacity">View</span>
+        <span ref={label} className="absolute left-5 top-0 bg-brand-deep/85 px-2 py-1 text-[10px] uppercase tracking-[0.3em] text-ivory opacity-0 transition-opacity">View</span>
       </div>
       <div ref={arrow} className="absolute left-0 top-0">
         <svg width="18" height="22" viewBox="0 0 18 22" className="-translate-x-[1px] -translate-y-[1px]">
