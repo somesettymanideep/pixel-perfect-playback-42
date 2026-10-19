@@ -4,4 +4,3 @@
 - [x] Match the supplied footer layout and verify desktop, narrow screens, and navigation.
 - [x] Redesign the contact section with FAQs on the left and the consultation form on the right; verify both layouts and interactions.
 - [x] Redesign the testimonials as a three-card sliding gallery; verify desktop, tablet, narrow and reduced-motion layouts.
-- [x] Set the About heading to a single large line ("About SEA") with the studio name moved below; verify it never wraps or spills its column.
