@@ -55,7 +55,7 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
                     <div className="min-w-0">
                       <p className="mb-2 text-[0.65rem] uppercase text-brand-teal">{project.cat} — {project.y}</p>
                       <h3 className="font-display text-3xl leading-tight text-brand-teal md:text-4xl xl:text-5xl">{project.n}</h3>
-                      <p className="mt-1 text-xs text-brand-teal/72">{project.loc}</p>
+                      <p className="mt-1 text-xs text-brand-teal">{project.loc}</p>
                     </div>
                     <ArrowUpRight aria-hidden className="size-5 shrink-0 text-brand-teal transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </div>
