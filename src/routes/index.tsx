@@ -4,6 +4,7 @@ import { Cursor } from "@/components/site/Cursor";
 import { ConsultationForm } from "@/components/site/ConsultationForm";
 import { ProjectsGallery } from "@/components/site/ProjectsGallery";
 import { AboutSection } from "@/components/site/AboutSection";
+import { Footer } from "@/components/site/Footer";
 import logo from "@/assets/sea-logo.png.asset.json";
 import hero from "@/assets/hero.jpg";
 import sArch from "@/assets/s-arch.jpg";
@@ -384,15 +385,7 @@ function Index() {
         </section>
       </main>
 
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-[1600px] flex-col gap-6 px-6 py-10 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between md:px-12">
-          <span className="inline-flex items-center rounded-[5px] bg-white p-1.5 opacity-90">
-            <img src={logo.url} alt="SEA — Studio for Eclectic Architecture" className="h-8 w-auto" loading="lazy" />
-          </span>
-          <p>© {new Date().getFullYear()} Studio for Eclectic Architecture</p>
-          <a href="#top" className="uppercase tracking-[0.28em] hover:text-foreground">Back to top ↑</a>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
@@ -405,7 +398,7 @@ function Testimonials() {
     return () => clearInterval(id);
   }, [i, n]);
   return (
-    <section aria-roledescription="carousel" aria-label="Client testimonials" className="relative overflow-hidden">
+    <section id="testimonials" tabIndex={-1} aria-roledescription="carousel" aria-label="Client testimonials" className="relative overflow-hidden">
       <img src={testiBg} alt="" loading="lazy" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-background/75" />
       <div className="relative mx-auto max-w-[1200px] px-6 py-32 md:px-12 md:py-44">
