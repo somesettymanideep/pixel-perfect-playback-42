@@ -249,7 +249,7 @@ function Index() {
 
         {/* STATS */}
         <section id="stats" tabIndex={-1} className="panel-deep relative overflow-hidden bg-brand-deep">
-          <div className="grid-lines pointer-events-none absolute inset-0 opacity-70" />
+          <div className="grid-lines pointer-events-none absolute inset-0 opacity-50" />
           <div className="bg-teal-glow pointer-events-none absolute -left-64 top-1/2 h-[44rem] w-[44rem] -translate-y-1/2" aria-hidden />
           <span className="reg-mark left-6 top-6 hidden md:block" aria-hidden />
           <span className="reg-mark right-6 top-6 hidden md:block" aria-hidden />
@@ -267,7 +267,7 @@ function Index() {
                   A working record of what the studio has made and how it works — light, material, time.
                 </p>
                 <div data-line className="mt-10 h-px w-24 bg-brand-teal" />
-                <p data-reveal className="mt-6 max-w-xs text-xs leading-relaxed text-muted-foreground/70">
+                <p data-reveal className="mt-6 max-w-xs text-xs leading-relaxed text-muted-foreground">
                   Figures shown are placeholders, to be replaced with the studio's verified numbers.
                 </p>
               </div>
@@ -290,7 +290,7 @@ function Index() {
                   </div>
                 ))}
               </div>
-              <div className="mt-14 overflow-hidden border-y border-border py-4">
+              <div className="ticker-mask mt-14 overflow-hidden border-y border-border py-4">
                 <div className="ticker-track">
                   {[0, 1].map((k) => (
                     <div key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
