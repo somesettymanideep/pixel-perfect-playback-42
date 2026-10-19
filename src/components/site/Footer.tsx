@@ -34,14 +34,14 @@ export function Footer() {
           </div>
           <nav aria-label="Footer explore">
             <h2 className="mb-5 font-display text-base font-semibold uppercase tracking-[0.16em] text-teal-lift">Explore</h2>
-            <ul className="space-y-3 text-sm text-services-bg/85">
-              {explore.map(([label, href]) => <li key={label}><a href={href} className="inline-block py-0.5 transition-colors hover:text-services-bg">{label}</a></li>)}
+            <ul className="space-y-1.5 text-base text-services-bg/85">
+              {explore.map(([label, href]) => <li key={label}><a href={href} className="inline-block py-1.5 transition-colors hover:text-services-bg">{label}</a></li>)}
             </ul>
           </nav>
           <nav aria-label="Footer services">
             <h2 className="mb-5 font-display text-base font-semibold uppercase tracking-[0.16em] text-teal-lift">Services</h2>
-            <ul className="space-y-3 text-sm text-services-bg/85">
-              {services.map(service => <li key={service}><a href="#services" className="inline-block py-0.5 transition-colors hover:text-services-bg">{service}</a></li>)}
+            <ul className="space-y-1.5 text-base text-services-bg/85">
+              {services.map(service => <li key={service}><a href="#services" className="inline-block py-1.5 transition-colors hover:text-services-bg">{service}</a></li>)}
             </ul>
           </nav>
           <div>
