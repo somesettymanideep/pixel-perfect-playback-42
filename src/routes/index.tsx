@@ -301,9 +301,9 @@ function Index() {
         </section>
 
         {/* STATS */}
-        <section id="stats" tabIndex={-1} className="panel-deep relative overflow-hidden bg-brand-deep">
-          <div className="grid-lines pointer-events-none absolute inset-0 opacity-50" />
-          <div className="bg-teal-glow pointer-events-none absolute -left-64 top-1/2 h-[44rem] w-[44rem] -translate-y-1/2" aria-hidden />
+        <section id="stats" tabIndex={-1} className="panel-light relative overflow-hidden bg-services-bg text-ink">
+          <div className="grid-lines pointer-events-none absolute inset-0" />
+          <div className="bg-teal-glow pointer-events-none absolute -left-64 top-1/2 h-[44rem] w-[44rem] -translate-y-1/2 opacity-30" aria-hidden />
           <span className="reg-mark left-6 top-6 hidden md:block" aria-hidden />
           <span className="reg-mark right-6 top-6 hidden md:block" aria-hidden />
           <span className="reg-mark bottom-6 left-6 hidden md:block" aria-hidden />
@@ -313,8 +313,8 @@ function Index() {
               <div>
                 <p className="label-num !text-sm">02 — The Studio</p>
                 <h2 data-mask className="mt-6 font-display text-7xl font-light leading-[0.95] lg:text-8xl xl:text-[6.3rem] 2xl:text-[7.2rem]">
-                  <span className="mask-line"><span className="text-brand-gradient-pale block">The Studio,</span></span>
-                  <span className="mask-line"><span className="text-brand-gradient-pale block italic">measured.</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient block">The Studio,</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient-inv block italic">measured.</span></span>
                 </h2>
               </div>
               <div className="max-w-md lg:pb-5 lg:text-right">
@@ -322,22 +322,19 @@ function Index() {
                   A working record of what the studio has made and how it works — light, material, time.
                 </p>
                 <div data-line className="mt-6 h-px w-24 bg-brand-teal lg:ml-auto" />
-                <p data-reveal className="mt-6 max-w-xs text-xs leading-relaxed text-muted-foreground lg:ml-auto">
-                  Figures shown are placeholders, to be replaced with the studio's verified numbers.
-                </p>
               </div>
             </div>
             <div className="mt-20 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
               {STATS.map((s, i) => (
-                <figure key={s.l} data-reveal className="group relative bg-brand-deep p-8 md:p-10">
+                <figure key={s.l} data-reveal className="group relative bg-paper p-8 md:p-10">
                   <span className="font-sans text-[0.62rem] tracking-[0.3em] text-brand-teal">0{i + 1}</span>
                   <div className="mt-7 flex flex-wrap items-baseline gap-x-3">
-                    <span className="font-display text-7xl font-light leading-[0.8] transition-colors duration-500 group-hover:text-teal-lift md:text-8xl">
-                      <span data-count={s.v || undefined}>{s.v || "—"}</span>
+                    <span className="stat-figure font-display font-light leading-[0.8] whitespace-nowrap text-brand-teal transition-colors duration-500 group-hover:text-brand-deep">
+                      <span data-count={s.v}>{s.v.toLocaleString("en-IN")}</span>
                     </span>
-                    {s.suffix ? <span className="font-sans text-[0.68rem] uppercase tracking-[0.28em] text-teal-lift">{s.suffix}</span> : null}
+                    {s.suffix ? <span className="font-sans text-[0.68rem] uppercase tracking-[0.28em] text-brand-deep">{s.suffix}</span> : null}
                   </div>
-                  <figcaption className="mt-7 text-[0.68rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors duration-500 group-hover:text-services-bg">
+                  <figcaption className="mt-7 text-[0.68rem] uppercase tracking-[0.3em] text-ink transition-colors duration-500 group-hover:text-brand-teal">
                     {s.l}
                   </figcaption>
                   <span data-bar className="absolute bottom-0 left-0 h-px w-full origin-left bg-brand-teal" aria-hidden />
