@@ -19,7 +19,7 @@ export function validateConsultation(data: Record<string, string>): Errors {
 function F({ name, label, type = "text", optional, errors }: { name: string; label: string; type?: string; optional?: boolean; errors: Errors }) {
   return (
     <div>
-      <label htmlFor={name} className="text-xs text-brand-deep">
+      <label htmlFor={name} className="text-sm text-brand-deep">
         {label} {optional && <span className="normal-case tracking-normal">(optional)</span>}
       </label>
       <input id={name} name={name} type={type} autoComplete={name === "name" ? "name" : name === "email" ? "email" : name === "phone" ? "tel" : undefined} className="consultation-field" aria-invalid={!!errors[name]} aria-describedby={errors[name] ? `${name}-err` : undefined} />
@@ -65,7 +65,7 @@ export function ConsultationForm() {
       <F errors={errors} name="email" label="Email" type="email" />
       <F errors={errors} name="phone" label="Phone" type="tel" optional />
       <div>
-        <label htmlFor="projectType" className="text-xs text-brand-deep">Project type</label>
+        <label htmlFor="projectType" className="text-sm text-brand-deep">Project type</label>
         <select id="projectType" name="projectType" defaultValue="" className="consultation-field" aria-invalid={!!errors["projectType"]} aria-describedby={errors["projectType"] ? "projectType-err" : undefined}>
           <option value="" disabled>Select</option>
           <option>Architecture Design</option>
@@ -77,7 +77,7 @@ export function ConsultationForm() {
       </div>
       <F errors={errors} name="location" label="Project location" />
       <div>
-        <label htmlFor="budget" className="text-xs text-brand-deep">Estimated budget <span>(optional)</span></label>
+        <label htmlFor="budget" className="text-sm text-brand-deep">Estimated budget <span>(optional)</span></label>
         <select id="budget" name="budget" defaultValue="" className="consultation-field">
           <option value="">Prefer not to say</option>
           <option>Under ₹50 lakh</option>
@@ -87,12 +87,12 @@ export function ConsultationForm() {
         </select>
       </div>
       <div className="sm:col-span-2">
-        <label htmlFor="details" className="text-xs text-brand-deep">Project details</label>
+        <label htmlFor="details" className="text-sm text-brand-deep">Project details</label>
         <textarea id="details" name="details" rows={4} className="consultation-field resize-y" aria-invalid={!!errors["details"]} aria-describedby={errors["details"] ? "details-err" : undefined} />
         {errors["details"] && <p id="details-err" className="mt-2 text-xs text-destructive">{errors["details"]}</p>}
       </div>
       <div className="sm:col-span-2">
-        <Button type="submit" disabled={status === "sending"} className="h-auto min-h-14 w-full justify-between whitespace-normal rounded-sm bg-brand-teal px-6 py-4 text-sm text-primary-foreground shadow-none hover:bg-brand-deep">
+        <Button type="submit" disabled={status === "sending"} className="h-auto min-h-14 w-full justify-between whitespace-normal rounded-sm bg-brand-teal px-6 py-4 text-base text-primary-foreground shadow-none hover:bg-brand-deep">
           {status === "sending" ? "Sending…" : "Request a Consultation"} <ArrowUpRight aria-hidden />
         </Button>
       </div>
