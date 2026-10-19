@@ -203,6 +203,7 @@
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 .ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; will-change: transform; }
 .ticker-track:hover { animation-play-state: paused; }
+.ticker-mask { -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 9%, #000 91%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, #000 9%, #000 91%, transparent 100%); }
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
