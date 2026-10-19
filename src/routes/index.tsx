@@ -217,7 +217,7 @@ function Index() {
               <div className="md:sticky md:top-32">
                 <p className="label-num">01 — Services</p>
                 <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl lg:text-8xl">
-                  <span className="mask-line"><span className="text-brand-gradient block">Four</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient block">Six</span></span>
                   <span className="mask-line"><span className="text-brand-gradient-inv block italic">disciplines,</span></span>
                   <span className="mask-line"><span className="text-brand-gradient block">one hand.</span></span>
                 </h2>
