@@ -33,36 +33,36 @@ export function Footer() {
             </div>
           </div>
           <nav aria-label="Footer explore">
-            <h2 className="mb-5 font-display text-sm font-semibold uppercase text-teal-lift">Explore</h2>
-            <ul className="space-y-2 text-xs text-services-bg/80">
-              {explore.map(([label, href]) => <li key={label}><a href={href} className="transition-colors hover:text-services-bg">{label}</a></li>)}
+            <h2 className="mb-5 font-display text-base font-semibold uppercase tracking-[0.16em] text-teal-lift">Explore</h2>
+            <ul className="space-y-3 text-sm text-services-bg/85">
+              {explore.map(([label, href]) => <li key={label}><a href={href} className="inline-block py-0.5 transition-colors hover:text-services-bg">{label}</a></li>)}
             </ul>
           </nav>
           <nav aria-label="Footer services">
-            <h2 className="mb-5 font-display text-sm font-semibold uppercase text-teal-lift">Services</h2>
-            <ul className="space-y-2 text-xs text-services-bg/80">
-              {services.map(service => <li key={service}><a href="#services" className="transition-colors hover:text-services-bg">{service}</a></li>)}
+            <h2 className="mb-5 font-display text-base font-semibold uppercase tracking-[0.16em] text-teal-lift">Services</h2>
+            <ul className="space-y-3 text-sm text-services-bg/85">
+              {services.map(service => <li key={service}><a href="#services" className="inline-block py-0.5 transition-colors hover:text-services-bg">{service}</a></li>)}
             </ul>
           </nav>
           <div>
-            <h2 className="mb-5 font-display text-sm font-semibold uppercase text-teal-lift">Contact</h2>
-            <dl className="space-y-4">
+            <h2 className="mb-5 font-display text-base font-semibold uppercase tracking-[0.16em] text-teal-lift">Contact</h2>
+            <dl className="space-y-5">
               {offices.map(office => <div key={office.name}>
-                <dt className="text-[0.625rem] font-semibold uppercase text-teal-lift">{office.name}</dt>
-                <dd className="mt-1 flex gap-1.5 text-[0.6875rem] leading-relaxed text-services-bg/80"><MapPin aria-hidden className="mt-0.5 h-3 w-3 shrink-0 text-teal-lift" /><span>{office.address}</span></dd>
+                <dt className="text-xs font-semibold uppercase text-teal-lift">{office.name}</dt>
+                <dd className="mt-1.5 flex gap-2 text-xs leading-relaxed text-services-bg/85"><MapPin aria-hidden className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-lift" /><span>{office.address}</span></dd>
               </div>)}
               <div className="border-t border-border pt-3">
-                <dt className="text-[0.625rem] font-semibold uppercase text-teal-lift">Phone</dt>
-                <dd className="mt-1"><a href="tel:+919000299600" className="inline-flex items-center gap-1.5 text-[0.6875rem] font-semibold hover:text-teal-lift"><Phone aria-hidden className="h-3 w-3" />+91 9000299600</a></dd>
+                <dt className="text-xs font-semibold uppercase text-teal-lift">Phone</dt>
+                <dd className="mt-1.5"><a href="tel:+919000299600" className="inline-flex items-center gap-1.5 text-sm font-semibold hover:text-teal-lift"><Phone aria-hidden className="h-3.5 w-3.5" />+91 9000299600</a></dd>
               </div>
             </dl>
           </div>
         </div>
-        <div className="flex flex-col gap-4 border-t border-border py-6 text-[0.625rem] text-services-bg/80 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-4 border-t border-border py-6 text-xs text-services-bg/85 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} SEA – Studio for Eclectic Architecture. All rights reserved.</p>
           <div className="flex gap-5">
-            <Button variant="link" disabled title="Privacy policy not yet supplied" className="h-auto p-0 text-[0.625rem] text-services-bg/80 disabled:opacity-80">Privacy Policy</Button>
-            <Button variant="link" disabled title="Terms not yet supplied" className="h-auto p-0 text-[0.625rem] text-services-bg/80 disabled:opacity-80">Terms</Button>
+            <Button variant="link" disabled title="Privacy policy not yet supplied" className="h-auto p-0 text-xs text-services-bg/85 disabled:opacity-80">Privacy Policy</Button>
+            <Button variant="link" disabled title="Terms not yet supplied" className="h-auto p-0 text-xs text-services-bg/85 disabled:opacity-80">Terms</Button>
           </div>
         </div>
       </div>
