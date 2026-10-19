@@ -49,13 +49,13 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
               <article key={project.n} data-project-card className="project-item">
                 <a href="#contact" data-cursor="view" aria-label={`Enquire about ${project.n}`} className="group block focus-visible:outline-offset-[-4px]">
                   <div data-project-clip className="project-image overflow-hidden">
-                    <img data-project-image src={project.img} alt={`${project.n}, ${project.loc}`} loading="lazy" width={1408} height={1008} className="h-full w-full object-cover" />
+                    <img data-project-image src={project.img} alt={project.loc ? `${project.n}, ${project.loc}` : project.n} loading="lazy" width={1408} height={1008} className="h-full w-full object-cover" />
                   </div>
                   <div data-project-caption className="project-caption panel-light relative mx-4 -mt-12 flex items-center justify-between gap-4 bg-services-bg px-5 py-4 text-brand-teal md:mx-6 md:px-6">
                     <div className="min-w-0">
-                      <p className="mb-2 text-xs uppercase text-brand-teal">{project.cat} — {project.y}</p>
+                      <p className="mb-2 text-xs uppercase text-brand-teal">{project.y ? `${project.cat} — ${project.y}` : project.cat}</p>
                       <h3 className="font-display text-2xl leading-tight text-brand-teal md:text-3xl xl:text-4xl">{project.n}</h3>
-                      <p className="mt-1 text-sm text-brand-teal">{project.loc}</p>
+                      {project.loc ? <p className="mt-1 text-sm text-brand-teal">{project.loc}</p> : null}
                     </div>
                     <ArrowUpRight aria-hidden className="size-5 shrink-0 text-brand-teal transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </div>
