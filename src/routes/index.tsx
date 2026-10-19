@@ -7,7 +7,9 @@ import hero from "@/assets/hero.jpg";
 import sArch from "@/assets/s-arch.jpg";
 import sInterior from "@/assets/s-interior.jpg";
 import sLandscape from "@/assets/s-landscape.jpg";
-import sTurnkey from "@/assets/s-turnkey.jpg";
+import sStructural from "@/assets/s-structural.jpg";
+import sProjectManagement from "@/assets/s-project-management.webp.asset.json";
+import sBim from "@/assets/s-bim.jpg";
 import p1 from "@/assets/p1.jpg";
 import p2 from "@/assets/p2.jpg";
 import p3 from "@/assets/p3.jpg";
@@ -33,10 +35,12 @@ const NAV = [
 ] as const;
 
 const SERVICES = [
-  { t: "Architecture Design", d: "Sculptural residences and buildings conceived from site, light and the rituals of the people who live in them.", img: sArch },
+  { t: "Architectural Design", d: "Sculptural residences and buildings conceived from site, light and the rituals of the people who live in them.", img: sArch },
   { t: "Interior Design", d: "Material-led interiors — stone, timber, bronze — composed with restraint and detailed to the millimetre.", img: sInterior },
   { t: "Landscape Design", d: "Courtyards, water and planting that extend architecture outward and soften its edges over time.", img: sLandscape },
-  { t: "Turnkey Execution", d: "One studio from first sketch to final handover: procurement, site supervision and craft coordination.", img: sTurnkey },
+  { t: "Structural Design", d: "Efficient structural frameworks — concrete, steel and timber — engineered quietly beneath the architecture.", img: sStructural },
+  { t: "Project Management", d: "Programme, budget and site coordination under one roof, so decisions land on time and on budget.", img: sProjectManagement.url },
+  { t: "BIM Services", d: "Coordinated digital models that resolve every clash before the first brick is laid on site.", img: sBim },
 ];
 
 // Editable placeholders — replace with the studio's real figures.
@@ -161,7 +165,9 @@ function Index() {
       <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-border bg-background/90 py-3 backdrop-blur-md" : "py-6"}`}>
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 md:px-12">
           <a href="#top" aria-label="SEA — home" className="flex items-center gap-3">
-            <img src={logo.url} alt="" className="h-9 w-auto brightness-0 invert" />
+            <span className="inline-flex items-center rounded-[5px] bg-white p-2">
+              <img src={logo.url} alt="SEA — Studio for Eclectic Architecture" className="h-9 w-auto" />
+            </span>
           </a>
           <nav aria-label="Primary" className="hidden gap-10 md:flex">
             {NAV.map(([l, h], i) => (
@@ -211,7 +217,7 @@ function Index() {
               <div className="md:sticky md:top-32">
                 <p className="label-num">01 — Services</p>
                 <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl lg:text-8xl">
-                  <span className="mask-line"><span className="text-brand-gradient block">Four</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient block">Six</span></span>
                   <span className="mask-line"><span className="text-brand-gradient-inv block italic">disciplines,</span></span>
                   <span className="mask-line"><span className="text-brand-gradient block">one hand.</span></span>
                 </h2>
@@ -335,7 +341,9 @@ function Index() {
 
       <footer className="border-t border-border">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-6 px-6 py-10 text-xs text-muted-foreground md:flex-row md:items-center md:justify-between md:px-12">
-          <img src={logo.url} alt="SEA — Studio for Eclectic Architecture" className="h-8 w-auto brightness-0 invert opacity-80" loading="lazy" />
+          <span className="inline-flex items-center rounded-[5px] bg-white p-1.5 opacity-90">
+            <img src={logo.url} alt="SEA — Studio for Eclectic Architecture" className="h-8 w-auto" loading="lazy" />
+          </span>
           <p>© {new Date().getFullYear()} Studio for Eclectic Architecture</p>
           <a href="#top" className="uppercase tracking-[0.28em] hover:text-foreground">Back to top ↑</a>
         </div>
