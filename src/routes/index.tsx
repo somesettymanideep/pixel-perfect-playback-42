@@ -14,9 +14,11 @@ import sLandscape from "@/assets/s-landscape.jpg";
 import sStructural from "@/assets/s-structural.jpg";
 import sProjectManagement from "@/assets/s-project-management.webp.asset.json";
 import sBim from "@/assets/s-bim.jpg";
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
-import p3 from "@/assets/p3.jpg";
+import pGangadhar from "@/assets/p-gangadhar.webp.asset.json";
+import pSindhura from "@/assets/p-sindhura.webp.asset.json";
+import pMallikarjun from "@/assets/p-mallikarjun.webp.asset.json";
+import pGravity from "@/assets/p-gravity.webp.asset.json";
+import pChandramouli from "@/assets/p-chandramouli.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -57,9 +59,11 @@ const STATS = [
 ];
 
 const PROJECTS = [
-  { n: "Terrace House", loc: "Lonavala, India", cat: "Residence", y: "2025", img: p1 },
-  { n: "Shell Pavilion", loc: "Ahmedabad, India", cat: "Cultural", y: "2024", img: p2 },
-  { n: "Skyline Residence", loc: "Mumbai, India", cat: "Interior", y: "2024", img: p3 },
+  { n: "Gangadhar Estate", loc: "Vijayawada, Andhra Pradesh", cat: "Estate", img: pGangadhar.url },
+  { n: "Krishna Sindhura Hospital", loc: "Hyderabad, Telangana", cat: "Healthcare", img: pSindhura.url },
+  { n: "Mallikarjun Reddy", loc: "Hyderabad, Telangana", cat: "Interior", img: pMallikarjun.url },
+  { n: "Gravity Central", loc: "Hyderabad, Telangana", cat: "Interior", img: pGravity.url },
+  { n: "Chandramouli Residence", cat: "Landscape", img: pChandramouli.url },
 ];
 
 // Sample testimonials — replace with real client feedback.
