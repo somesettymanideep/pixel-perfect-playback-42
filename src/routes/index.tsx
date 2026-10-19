@@ -204,18 +204,18 @@ function Index() {
         </section>
 
         {/* SERVICES */}
-        <section id="services" tabIndex={-1} className="relative">
+        <section id="services" tabIndex={-1} className="panel-light relative bg-services-bg text-ink">
           <div className="pointer-events-none absolute inset-0 grid-lines" />
           <div className="relative mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
             <div className="md:col-span-5">
               <div className="md:sticky md:top-32">
                 <p className="label-num">01 — Services</p>
                 <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl lg:text-8xl">
-                  <span className="mask-line"><span className="block">Four</span></span>
-                  <span className="mask-line"><span className="block italic text-bronze">disciplines,</span></span>
-                  <span className="mask-line"><span className="block">one hand.</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient block">Four</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient-inv block italic">disciplines,</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient block">one hand.</span></span>
                 </h2>
-                <p data-reveal className="mt-8 max-w-sm text-muted-foreground">Every project is held by a single studio — so the building, the room and the garden speak one language.</p>
+                <p data-reveal className="mt-8 max-w-sm text-ink">Every project is held by a single studio — so the building, the room and the garden speak one language.</p>
               </div>
             </div>
             <div className="space-y-28 md:col-span-7 md:space-y-40">
@@ -223,15 +223,15 @@ function Index() {
                 <article key={s.t}>
                   <div data-line className="mb-8 h-px w-full bg-border" />
                   <div className="flex items-baseline justify-between gap-6">
-                    <h3 data-reveal className="font-display text-4xl font-light md:text-5xl">
-                      <span className="mr-4 font-sans text-xs tracking-[0.3em] text-bronze">0{i + 1}</span>{s.t}
+                    <h3 data-reveal className="font-display text-4xl font-light text-brand-teal md:text-5xl">
+                      <span className="mr-4 font-sans text-xs tracking-[0.3em] text-brand-deep">0{i + 1}</span>{s.t}
                     </h3>
                   </div>
                   <div data-clip className="mt-8 aspect-[4/3] overflow-hidden">
                     <img src={s.img} alt={s.t} loading="lazy" width={1200} height={1408} className="h-full w-full object-cover" />
                   </div>
                   <div className="mt-8 grid gap-6 md:grid-cols-2">
-                    <p data-reveal className="text-muted-foreground">{s.d}</p>
+                    <p data-reveal className="text-ink">{s.d}</p>
                     <a data-reveal href="#contact" className="group inline-flex items-center gap-3 self-start text-[0.7rem] uppercase tracking-[0.28em] md:justify-self-end">
                       Explore Service <span aria-hidden className="inline-block h-px w-8 bg-bronze transition-all duration-500 group-hover:w-14" />
                     </a>
