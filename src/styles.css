@@ -35,6 +35,10 @@
   --color-bronze: var(--bronze);
   --color-teal: var(--teal);
   --color-line: var(--line);
+  --color-services-bg: var(--services-bg);
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-deep: var(--brand-deep);
+  --color-ink: var(--ink);
 }
 
 :root {
@@ -44,6 +48,10 @@
   --ivory-foreground: oklch(0.22 0.04 220);
   --bronze: oklch(0.68 0.07 215); /* logo light teal #5CA5B7 */
   --teal: oklch(0.52 0.1 220); /* logo teal #017890 */
+  --services-bg: #f3fdfe; /* services panel background */
+  --brand-teal: #067688; /* brand teal */
+  --brand-deep: #0e2638; /* brand deep navy */
+  --ink: #000000; /* body copy on light panels */
   --background: var(--charcoal);
   --foreground: var(--ivory);
   --card: oklch(0.21 0.03 220);
@@ -94,6 +102,23 @@
   -webkit-text-stroke: 1px var(--ivory);
 }
 @utility bg-overlay { background: var(--overlay); }
+@utility text-brand-gradient {
+  background-image: linear-gradient(96deg, var(--brand-teal) 0%, var(--brand-deep) 52%, var(--brand-teal) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+/* Light panel (services): retint hairlines, accents and focus rings for a pale background. */
+.panel-light {
+  --line: rgb(6 118 136 / 9%);
+  --border: rgb(14 38 56 / 16%);
+  --bronze: var(--brand-teal);
+  --teal: var(--brand-teal);
+  --muted-foreground: var(--brand-deep);
+  color: var(--ink);
+}
+.panel-light ::selection { background: var(--brand-teal); color: #ffffff; }
 @utility grid-lines {
   background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
   background-size: calc(100% / 6) 100%;
