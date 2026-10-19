@@ -12,11 +12,13 @@ export function AboutSection() {
             <span aria-hidden className="h-px w-12 bg-brand-teal" />
             <p className="text-sm uppercase text-brand-teal">About Us</p>
           </div>
-          <h2 id="about-heading" data-reveal className="font-display text-6xl font-light leading-[1.05] text-brand-deep lg:text-7xl xl:text-[5.25rem] 2xl:text-[6rem]">
-            <span className="mb-3 block text-brand-teal">SEA</span>
-            Studio for Eclectic <span className="italic">Architecture.</span>
+          <h2 id="about-heading" data-reveal className="font-display text-[4.25rem] font-light leading-[1.02] whitespace-nowrap text-brand-deep min-[520px]:text-[5.5rem] sm:text-[6.5rem] md:text-[8rem] lg:text-[5.5rem] xl:text-[7.25rem] 2xl:text-[9rem]">
+            About <span className="text-brand-teal">SEA</span>
           </h2>
-          <p data-reveal className="mt-7 max-w-lg text-sm leading-relaxed text-ink md:text-base">
+          <p data-reveal className="mt-6 max-w-xl font-display text-3xl font-light italic leading-snug text-brand-deep sm:text-4xl lg:text-[2.75rem]">
+            Studio for Eclectic <span className="text-brand-teal">Architecture.</span>
+          </p>
+          <p data-reveal className="mt-6 max-w-lg text-sm leading-relaxed text-ink md:text-base">
             We bring architecture, interiors and landscape together to shape spaces around the way you live.
           </p>
           <p data-reveal className="mt-4 max-w-lg text-sm leading-relaxed text-ink md:text-base">
