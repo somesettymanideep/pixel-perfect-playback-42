@@ -31,10 +31,10 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
         <div className="pointer-events-none absolute inset-0 grid-lines opacity-70" />
         <div className="relative mx-auto flex w-full max-w-[1600px] items-end justify-between gap-6 px-6 pb-8 md:px-12 md:pb-10">
           <div>
-            <p className="mb-3 text-sm uppercase text-brand-teal">Portfolio</p>
-            <h2 id="projects-heading" className="font-display text-6xl font-light leading-none md:text-7xl lg:text-8xl 2xl:text-[6.5rem]"><span className="block text-brand-gradient">Our Projects</span></h2>
+            <p className="mb-3 text-base uppercase text-brand-teal">Portfolio</p>
+            <h2 id="projects-heading" className="font-display text-5xl font-light leading-none md:text-6xl lg:text-7xl 2xl:text-[5rem]"><span className="block text-brand-gradient">Our Projects</span></h2>
           </div>
-          <span aria-hidden className="font-display text-7xl leading-none text-brand-deep/18 md:text-8xl lg:text-9xl">.03</span>
+          <span aria-hidden className="font-display text-6xl leading-none text-brand-deep/18 md:text-7xl lg:text-8xl">.03</span>
         </div>
         <div data-project-viewport className="project-viewport relative" onScroll={(event) => {
           if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -53,9 +53,9 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
                   </div>
                   <div data-project-caption className="project-caption panel-light relative mx-4 -mt-12 flex items-center justify-between gap-4 bg-services-bg px-5 py-4 text-brand-teal md:mx-6 md:px-6">
                     <div className="min-w-0">
-                      <p className="mb-2 text-[0.65rem] uppercase text-brand-teal">{project.cat} — {project.y}</p>
+                      <p className="mb-2 text-xs uppercase text-brand-teal">{project.cat} — {project.y}</p>
                       <h3 className="font-display text-2xl leading-tight text-brand-teal md:text-3xl xl:text-4xl">{project.n}</h3>
-                      <p className="mt-1 text-xs text-brand-teal">{project.loc}</p>
+                      <p className="mt-1 text-sm text-brand-teal">{project.loc}</p>
                     </div>
                     <ArrowUpRight aria-hidden className="size-5 shrink-0 text-brand-teal transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </div>
