@@ -50,12 +50,12 @@ const SERVICES = [
   { t: "BIM Services", d: "Coordinated digital models that resolve every clash before the first brick is laid on site.", img: sBim },
 ];
 
-// Editable placeholders — replace with the studio's real figures.
+// The studio's figures, as supplied by the studio.
 const STATS = [
-  { v: 0, suffix: "+", l: "Projects Completed" },
-  { v: 0, suffix: "k sq ft", l: "Area Designed" },
-  { v: 0, suffix: "", l: "Years of Experience" },
-  { v: 0, suffix: "%", l: "Client Satisfaction" },
+  { v: 350, suffix: "+", l: "Projects Completed" },
+  { v: 10000, suffix: "sq ft", l: "Area Designed" },
+  { v: 16, suffix: "+", l: "Years of Experience" },
+  { v: 100, suffix: "%", l: "Client Satisfaction" },
 ];
 
 const PROJECTS = [
@@ -154,7 +154,7 @@ function Index() {
         gsap.utils.toArray<HTMLElement>("[data-count]:not([data-count=''])").forEach((el) => {
           const end = Number(el.dataset["count"]);
           const o = { v: 0 };
-          gsap.to(o, { v: end, duration: 2, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 85%", once: true }, onUpdate: () => (el.textContent = String(Math.round(o.v))) });
+          gsap.to(o, { v: end, duration: 2, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 85%", once: true }, onUpdate: () => (el.textContent = Math.round(o.v).toLocaleString("en-IN")) });
         });
         // A sticky stage keeps the gallery steady while vertical scroll moves the track.
         const section = document.getElementById("projects");
