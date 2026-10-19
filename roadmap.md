@@ -4,3 +4,4 @@
 - [x] Match the supplied footer layout and verify desktop, narrow screens, and navigation.
 - [x] Redesign the contact section with FAQs on the left and the consultation form on the right; verify both layouts and interactions.
 - [x] Redesign the testimonials as a three-card sliding gallery; verify desktop, tablet, narrow and reduced-motion layouts.
+- [x] In About Us, Services and Projects: step the section titles down and the labels, lead text and item names up; verify sizes and that nothing clips.

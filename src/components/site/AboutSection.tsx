@@ -10,16 +10,16 @@ export function AboutSection() {
         <div>
           <div data-reveal className="mb-6 flex items-center gap-4">
             <span aria-hidden className="h-px w-12 bg-brand-teal" />
-            <p className="text-sm uppercase text-brand-teal">About Us</p>
+            <p className="text-base uppercase text-brand-teal">About Us</p>
           </div>
-          <h2 id="about-heading" data-reveal className="font-display text-6xl font-light leading-[1.05] text-brand-deep lg:text-7xl xl:text-[5.25rem] 2xl:text-[6rem]">
+          <h2 id="about-heading" data-reveal className="font-display text-5xl font-light leading-[1.05] text-brand-deep sm:text-6xl xl:text-[4.25rem] 2xl:text-[5rem]">
             <span className="mb-3 block text-brand-teal">SEA</span>
             Studio for Eclectic <span className="italic">Architecture.</span>
           </h2>
-          <p data-reveal className="mt-7 max-w-lg text-sm leading-relaxed text-ink md:text-base">
+          <p data-reveal className="mt-7 max-w-lg text-base leading-relaxed text-ink md:text-lg">
             We bring architecture, interiors and landscape together to shape spaces around the way you live.
           </p>
-          <p data-reveal className="mt-4 max-w-lg text-sm leading-relaxed text-ink md:text-base">
+          <p data-reveal className="mt-4 max-w-lg text-base leading-relaxed text-ink md:text-lg">
             From the first idea to the finest detail, our approach connects light, material and place — with a single vision carried through every discipline.
           </p>
           <div data-reveal className="mt-9">

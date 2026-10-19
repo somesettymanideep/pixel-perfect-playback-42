@@ -263,13 +263,13 @@ function Index() {
           <div className="relative mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
             <div className="md:col-span-5">
               <div className="md:sticky md:top-32">
-                <p className="label-num !text-sm">01 — Services</p>
-                <h2 data-mask className="mt-6 font-display text-7xl font-light leading-[0.95] lg:text-8xl xl:text-[6.5rem] 2xl:text-[7.5rem]">
+                <p className="label-num !text-base">01 — Services</p>
+                <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] lg:text-7xl xl:text-[5rem] 2xl:text-[6rem]">
                   <span className="mask-line"><span className="text-brand-gradient block">Six</span></span>
                   <span className="mask-line"><span className="text-brand-gradient-inv block italic">disciplines,</span></span>
                   <span className="mask-line"><span className="text-brand-gradient block">one hand.</span></span>
                 </h2>
-                <p data-reveal className="mt-8 max-w-sm text-ink">Every project is held by a single studio — so the building, the room and the garden speak one language.</p>
+                <p data-reveal className="mt-8 max-w-md text-base leading-relaxed text-ink md:text-lg">Every project is held by a single studio — so the building, the room and the garden speak one language.</p>
               </div>
             </div>
             <div className="space-y-28 md:col-span-7 md:space-y-40">
@@ -277,7 +277,7 @@ function Index() {
                 <article key={s.t}>
                   <div data-line className="mb-8 h-px w-full bg-border" />
                   <div className="flex items-baseline justify-between gap-6">
-                    <h3 data-reveal className="font-display text-4xl font-light text-brand-teal sm:text-5xl lg:text-[3.4rem] xl:text-6xl 2xl:text-7xl">
+                    <h3 data-reveal className="font-display text-5xl font-light text-brand-teal sm:text-[3.25rem] lg:text-[3.9rem] xl:text-[4.4rem] 2xl:text-7xl">
                       <span className="mr-4 font-sans text-xs tracking-[0.3em] text-brand-deep">0{i + 1}</span>{s.t}
                     </h3>
                   </div>
