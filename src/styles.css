@@ -39,6 +39,7 @@
   --color-brand-teal: var(--brand-teal);
   --color-brand-deep: var(--brand-deep);
   --color-ink: var(--ink);
+  --color-teal-lift: var(--teal-lift);
 }
 
 :root {
@@ -52,6 +53,7 @@
   --brand-teal: #067688; /* brand teal */
   --brand-deep: #0e2638; /* brand deep navy */
   --ink: #000000; /* body copy on light panels */
+  --teal-lift: color-mix(in oklab, var(--brand-teal) 42%, var(--services-bg)); /* light teal — readable on navy */
   --background: var(--charcoal);
   --foreground: var(--ivory);
   --card: oklch(0.21 0.03 220);
@@ -116,6 +118,17 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+@utility text-brand-gradient-pale {
+  background-image: linear-gradient(96deg, var(--teal-lift) 0%, var(--services-bg) 52%, var(--teal-lift) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+@utility bg-teal-glow {
+  background: radial-gradient(circle, color-mix(in oklab, var(--brand-teal) 34%, transparent) 0%, transparent 68%);
+  filter: blur(28px);
+}
 /* Light panel (services): retint hairlines, accents and focus rings for a pale background. */
 .panel-light {
   --line: rgb(6 118 136 / 9%);
@@ -126,6 +139,21 @@
   color: var(--ink);
 }
 .panel-light ::selection { background: var(--brand-teal); color: #ffffff; }
+/* Deep panel (studio figures): navy ground, pale copy, teal accents. */
+.panel-deep {
+  --line: rgb(6 118 136 / 16%);
+  --border: rgb(243 253 254 / 14%);
+  --bronze: var(--teal-lift);
+  --teal: var(--teal-lift);
+  --muted-foreground: rgb(243 253 254 / 58%);
+  color: var(--services-bg);
+}
+.panel-deep ::selection { background: var(--brand-teal); color: #ffffff; }
+/* Drawing registration marks for the corners of a deep panel. */
+.reg-mark { position: absolute; width: 13px; height: 13px; opacity: 0.55; }
+.reg-mark::before, .reg-mark::after { content: ""; position: absolute; background: var(--teal-lift); }
+.reg-mark::before { left: 50%; top: 0; width: 1px; height: 100%; transform: translateX(-50%); }
+.reg-mark::after { top: 50%; left: 0; width: 100%; height: 1px; transform: translateY(-50%); }
 @utility grid-lines {
   background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
   background-size: calc(100% / 6) 100%;
@@ -170,4 +198,11 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .scroll-hint::after { animation: none; }
+}
+
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; will-change: transform; }
+.ticker-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
 }
