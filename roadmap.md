@@ -1,4 +1,4 @@
 - [x] Replace the Projects stack with a horizontal, scroll-revealed gallery matching the reference.
 - [x] Verify gallery scrolling, navigation, reduced motion, and narrow-screen layout.
 - [x] Add a reference-inspired About Us section directly after the hero and verify its layout and link.
-- [ ] Match the supplied footer layout and verify desktop, narrow screens, and navigation.
+- [x] Match the supplied footer layout and verify desktop, narrow screens, and navigation.
