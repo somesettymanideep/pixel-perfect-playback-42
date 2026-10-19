@@ -10,7 +10,6 @@ import sLandscape from "@/assets/s-landscape.jpg";
 import sStructural from "@/assets/s-structural.jpg";
 import sProjectManagement from "@/assets/s-project-management.webp.asset.json";
 import sBim from "@/assets/s-bim.jpg";
-import sTurnkey from "@/assets/s-turnkey.jpg";
 import p1 from "@/assets/p1.jpg";
 import p2 from "@/assets/p2.jpg";
 import p3 from "@/assets/p3.jpg";
