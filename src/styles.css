@@ -109,6 +109,13 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+@utility text-brand-gradient-inv {
+  background-image: linear-gradient(96deg, var(--brand-deep) 0%, var(--brand-teal) 55%, var(--brand-deep) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
 /* Light panel (services): retint hairlines, accents and focus rings for a pale background. */
 .panel-light {
   --line: rgb(6 118 136 / 9%);

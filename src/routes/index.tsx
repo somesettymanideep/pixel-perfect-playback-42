@@ -210,10 +210,10 @@ function Index() {
             <div className="md:col-span-5">
               <div className="md:sticky md:top-32">
                 <p className="label-num">01 — Services</p>
-                <h2 data-mask className="text-brand-gradient mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl lg:text-8xl">
-                  <span className="mask-line"><span className="block">Four</span></span>
-                  <span className="mask-line"><span className="block italic">disciplines,</span></span>
-                  <span className="mask-line"><span className="block">one hand.</span></span>
+                <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl lg:text-8xl">
+                  <span className="mask-line"><span className="text-brand-gradient block">Four</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient-inv block italic">disciplines,</span></span>
+                  <span className="mask-line"><span className="text-brand-gradient block">one hand.</span></span>
                 </h2>
                 <p data-reveal className="mt-8 max-w-sm text-ink">Every project is held by a single studio — so the building, the room and the garden speak one language.</p>
               </div>
