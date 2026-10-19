@@ -290,19 +290,21 @@ function Index() {
                   </div>
                 ))}
               </div>
-              <div className="ticker-mask mt-14 overflow-hidden border-y border-border py-4">
-                <div className="ticker-track">
-                  {[0, 1].map((k) => (
-                    <div key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
-                      {SERVICES.map((s) => (
-                        <span key={s.t} className="flex items-center whitespace-nowrap text-[0.66rem] uppercase tracking-[0.3em] text-teal-lift">
-                          {s.t}
-                          <span className="mx-8 text-brand-teal">◆</span>
-                        </span>
-                      ))}
-                    </div>
-                  ))}
-                </div>
+            </div>
+          </div>
+          <div className="ticker-mask relative overflow-hidden border-y border-border py-4">
+            <div className="mx-auto max-w-[1600px] px-6 md:px-12">
+              <div className="ticker-track">
+                {[0, 1].map((k) => (
+                  <div key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
+                    {SERVICES.map((s) => (
+                      <span key={s.t} className="flex items-center whitespace-nowrap text-[0.66rem] uppercase tracking-[0.3em] text-teal-lift">
+                        {s.t}
+                        <span className="mx-8 text-brand-teal">◆</span>
+                      </span>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
           </div>
