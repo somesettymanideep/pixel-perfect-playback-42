@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Cursor } from "@/components/site/Cursor";
 import { ConsultationForm } from "@/components/site/ConsultationForm";
+import { ProjectsGallery } from "@/components/site/ProjectsGallery";
 import logo from "@/assets/sea-logo.png.asset.json";
 import hero from "@/assets/hero.jpg";
 import sArch from "@/assets/s-arch.jpg";
@@ -22,6 +23,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Studio for Eclectic Architecture: architecture, interiors, landscape and turnkey execution for spaces with lasting presence." },
       { property: "og:title", content: "SEA — Studio for Eclectic Architecture" },
       { property: "og:description", content: "Architecture, interiors and landscapes crafted with lasting presence." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -91,7 +94,9 @@ function Index() {
       const onAnchor = (e: MouseEvent) => {
         const a = (e.target as HTMLElement).closest('a[href^="#"]') as HTMLAnchorElement | null;
         if (!a) return;
-        const el = document.querySelector(a.getAttribute("href")!);
+        const href = a.getAttribute("href");
+        if (!href) return;
+        const el = document.querySelector(href);
         if (!el) return;
         e.preventDefault();
         if (lenis) lenis.scrollTo(el as HTMLElement, { offset: 0, duration: 1.4 });
@@ -99,6 +104,12 @@ function Index() {
         (el as HTMLElement).focus?.({ preventScroll: true });
       };
       document.addEventListener("click", onAnchor);
+      const onProjectScroll = (event: Event) => {
+        const top = (event as CustomEvent<number>).detail;
+        if (lenis) lenis.scrollTo(top, { duration: 1.1 });
+        else window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+      };
+      window.addEventListener("sea:project-scroll", onProjectScroll);
 
       const ctx = gsap.context(() => {
         ScrollTrigger.create({ start: 80, onUpdate: (s) => setScrolled(s.scroll() > 80) });
@@ -136,18 +147,49 @@ function Index() {
           const o = { v: 0 };
           gsap.to(o, { v: end, duration: 2, ease: "power2.out", scrollTrigger: { trigger: el, start: "top 85%", once: true }, onUpdate: () => (el.textContent = String(Math.round(o.v))) });
         });
-        // Project stack: previous card dims & recedes as next overlaps
-        const cards = gsap.utils.toArray<HTMLElement>("[data-card]");
-        cards.forEach((c, i) => {
-          const next = cards[i + 1];
-          if (!next) return;
-          gsap.to(c.querySelector("[data-card-inner]"), { scale: 0.9, opacity: 0.35, ease: "none", scrollTrigger: { trigger: next, start: "top bottom", end: "top top", scrub: true } });
-        });
+        // A sticky stage keeps the gallery steady while vertical scroll moves the track.
+        const section = document.getElementById("projects");
+        const track = section?.querySelector<HTMLElement>("[data-project-track]");
+        if (section && track) {
+          const distance = () => Math.max(0, track.scrollWidth - window.innerWidth);
+          const measure = () => section.style.setProperty("--project-travel", `${distance()}px`);
+          measure();
+          const cards = Array.from(track.querySelectorAll<HTMLElement>("[data-project-card]"));
+          const dots = Array.from(section.querySelectorAll<HTMLElement>("[data-project-dot]"));
+          const counter = section.querySelector("[data-project-current]");
+          const progress = section.querySelector("[data-project-progress]");
+          const gallery = gsap.timeline({ scrollTrigger: {
+            trigger: section, start: "top top", end: () => `+=${distance()}`, scrub: 0.6,
+            invalidateOnRefresh: true, onRefreshInit: measure,
+            onUpdate: (self) => {
+              const active = Math.round(self.progress * (cards.length - 1));
+              if (counter) counter.textContent = String(active + 1).padStart(2, "0");
+              dots.forEach((dot, index) => dot.setAttribute("aria-current", String(index === active)));
+            },
+          } });
+          dots[0]?.setAttribute("aria-current", "true");
+          gallery.to(track, { x: () => -distance(), duration: 1, ease: "none" }, 0);
+          if (progress) gallery.fromTo(progress, { scaleX: 0 }, { scaleX: 1, duration: 1, ease: "none" }, 0);
+          cards.forEach((card, index) => {
+            const clip = card.querySelector("[data-project-clip]");
+            const image = card.querySelector("[data-project-image]");
+            if (!clip || !image) return;
+            if (index === 0) {
+              gsap.fromTo(clip, { clipPath: "inset(12% 10% 12% 10%)" }, { clipPath: "inset(0% 0% 0% 0%)", ease: "none", scrollTrigger: { trigger: section, start: "top 85%", end: "top top", scrub: true } });
+            } else {
+              const entry = Math.max(0, (card.offsetLeft - window.innerWidth * 0.85) / Math.max(1, distance()));
+              gallery.fromTo(clip, { clipPath: "inset(10% 16% 10% 16%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: Math.min(0.35, 1 - entry), ease: "none" }, entry);
+            }
+            gallery.fromTo(image, { scale: 1.12, xPercent: -3 }, { scale: 1, xPercent: 3, duration: 1, ease: "none" }, 0);
+          });
+          ScrollTrigger.refresh();
+        }
       }, root);
 
       cleanup = () => {
         ctx.revert();
         document.removeEventListener("click", onAnchor);
+        window.removeEventListener("sea:project-scroll", onProjectScroll);
         gsap.ticker.remove(raf);
         lenis?.destroy();
       };
@@ -311,45 +353,7 @@ function Index() {
         </section>
 
         {/* PROJECTS */}
-        <section id="projects" tabIndex={-1} className="relative">
-          <div className="pointer-events-none absolute inset-0 grid-lines" />
-          <div className="relative mx-auto grid max-w-[1600px] gap-12 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
-            <div className="md:col-span-4">
-              <div className="md:sticky md:top-32">
-                <p className="label-num">03 — Selected Work</p>
-                <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl">
-                  <span className="mask-line"><span className="block">Spaces With</span></span>
-                  <span className="mask-line"><span className="block italic text-outline">a Lasting</span></span>
-                  <span className="mask-line"><span className="block">Presence.</span></span>
-                </h2>
-                <p data-reveal className="mt-8 max-w-xs text-muted-foreground">Homes, pavilions and interiors designed to age with grace.</p>
-                <a data-reveal href="#projects" className="btn-ghost mt-10">View All Projects</a>
-              </div>
-            </div>
-            <div className="md:col-span-8">
-              {PROJECTS.map((p, i) => (
-                <article key={p.n} data-card className="md:sticky md:top-0 md:flex md:h-screen md:items-center">
-                  <div data-card-inner className="w-full origin-top pb-16 md:pb-0">
-                    <a href="#contact" data-cursor="view" aria-label={`View project ${p.n}`} className="group block">
-                      <div data-clip className="relative aspect-[16/11] overflow-hidden">
-                        <img src={p.img} alt={`${p.n}, ${p.loc}`} loading="lazy" width={1408} height={1008} className="h-full w-full object-cover transition-transform duration-[1.4s] group-hover:scale-[1.06]" />
-                        <div className="absolute inset-0 flex items-end bg-gradient-to-t from-background/80 via-transparent to-transparent p-6 opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100">
-                          <span className="text-[0.7rem] uppercase tracking-[0.3em]">View Project →</span>
-                        </div>
-                      </div>
-                      <div className="mt-6 grid grid-cols-2 gap-4 border-t border-border pt-5 md:grid-cols-4">
-                        <h3 className="font-display text-2xl md:text-3xl"><span className="mr-3 font-sans text-xs text-bronze">0{i + 1}</span>{p.n}</h3>
-                        <p className="text-sm text-muted-foreground md:pt-2">{p.loc}</p>
-                        <p className="text-sm text-muted-foreground md:pt-2">{p.cat}</p>
-                        <p className="text-sm text-muted-foreground md:pt-2 md:text-right">{p.y}</p>
-                      </div>
-                    </a>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <ProjectsGallery projects={PROJECTS} />
 
         <Testimonials />
 
