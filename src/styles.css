@@ -217,9 +217,6 @@
   .scroll-hint::after { animation: none; }
 }
 
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.ticker-track { display: flex; width: max-content; animation: ticker 38s linear infinite; will-change: transform; }
-.ticker-track:hover { animation-play-state: paused; }
 .project-gallery { height: calc(100svh + var(--project-travel, 1200px)); }
 .project-stage { position: sticky; top: 0; height: 100svh; min-height: 540px; display: flex; flex-direction: column; justify-content: center; padding: 100px 0 32px; }
 .project-viewport { overflow: hidden; }

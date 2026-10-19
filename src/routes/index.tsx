@@ -304,57 +304,41 @@ function Index() {
           <span className="reg-mark right-6 top-6 hidden md:block" aria-hidden />
           <span className="reg-mark bottom-6 left-6 hidden md:block" aria-hidden />
           <span className="reg-mark bottom-6 right-6 hidden md:block" aria-hidden />
-          <div className="relative mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
-            <div className="md:col-span-5">
-              <div className="md:sticky md:top-32">
+          <div className="relative mx-auto max-w-[1600px] px-6 py-28 md:px-12 md:py-40">
+            <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+              <div>
                 <p className="label-num !text-sm">02 — The Studio</p>
                 <h2 data-mask className="mt-6 font-display text-7xl font-light leading-[0.95] lg:text-8xl xl:text-[6.3rem] 2xl:text-[7.2rem]">
                   <span className="mask-line"><span className="text-brand-gradient-pale block">The Studio,</span></span>
                   <span className="mask-line"><span className="text-brand-gradient-pale block italic">measured.</span></span>
                 </h2>
-                <p data-reveal className="mt-8 max-w-sm text-sm leading-relaxed text-muted-foreground">
+              </div>
+              <div className="max-w-md lg:pb-5 lg:text-right">
+                <p data-reveal className="text-sm leading-relaxed text-muted-foreground">
                   A working record of what the studio has made and how it works — light, material, time.
                 </p>
-                <div data-line className="mt-10 h-px w-24 bg-brand-teal" />
-                <p data-reveal className="mt-6 max-w-xs text-xs leading-relaxed text-muted-foreground">
+                <div data-line className="mt-6 h-px w-24 bg-brand-teal lg:ml-auto" />
+                <p data-reveal className="mt-6 max-w-xs text-xs leading-relaxed text-muted-foreground lg:ml-auto">
                   Figures shown are placeholders, to be replaced with the studio's verified numbers.
                 </p>
               </div>
             </div>
-            <div className="md:col-span-7">
-              <div className="border-b border-border">
-                {STATS.map((s, i) => (
-                  <div key={s.l} data-reveal className="group relative border-t border-border py-9 md:py-11">
-                    <span data-bar className="absolute inset-x-0 top-0 h-px origin-left bg-brand-teal" aria-hidden />
-                    <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-3">
-                      <div className="flex items-baseline gap-4">
-                        <span className="font-sans text-[0.62rem] tracking-[0.3em] text-brand-teal">0{i + 1}</span>
-                        <span className="font-display text-6xl font-light leading-[0.8] transition-colors duration-500 group-hover:text-teal-lift md:text-8xl">
-                          <span data-count={s.v || undefined}>{s.v || "—"}</span>
-                        </span>
-                        {s.suffix ? <span className="font-sans text-[0.68rem] uppercase tracking-[0.28em] text-teal-lift">{s.suffix}</span> : null}
-                      </div>
-                      <p className="text-[0.68rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors duration-500 group-hover:text-services-bg">{s.l}</p>
-                    </div>
+            <div className="mt-20 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
+              {STATS.map((s, i) => (
+                <figure key={s.l} data-reveal className="group relative bg-brand-deep p-8 md:p-10">
+                  <span className="font-sans text-[0.62rem] tracking-[0.3em] text-brand-teal">0{i + 1}</span>
+                  <div className="mt-7 flex flex-wrap items-baseline gap-x-3">
+                    <span className="font-display text-7xl font-light leading-[0.8] transition-colors duration-500 group-hover:text-teal-lift md:text-8xl">
+                      <span data-count={s.v || undefined}>{s.v || "—"}</span>
+                    </span>
+                    {s.suffix ? <span className="font-sans text-[0.68rem] uppercase tracking-[0.28em] text-teal-lift">{s.suffix}</span> : null}
                   </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="ticker-mask relative overflow-hidden border-y border-border py-4">
-            <div className="mx-auto max-w-[1600px] px-6 md:px-12">
-              <div className="ticker-track">
-                {[0, 1].map((k) => (
-                  <div key={k} className="flex shrink-0 items-center" aria-hidden={k === 1}>
-                    {SERVICES.map((s) => (
-                      <span key={s.t} className="flex items-center whitespace-nowrap text-[0.66rem] uppercase tracking-[0.3em] text-teal-lift">
-                        {s.t}
-                        <span className="mx-8 text-brand-teal">◆</span>
-                      </span>
-                    ))}
-                  </div>
-                ))}
-              </div>
+                  <figcaption className="mt-7 text-[0.68rem] uppercase tracking-[0.3em] text-muted-foreground transition-colors duration-500 group-hover:text-services-bg">
+                    {s.l}
+                  </figcaption>
+                  <span data-bar className="absolute bottom-0 left-0 h-px w-full origin-left bg-brand-teal" aria-hidden />
+                </figure>
+              ))}
             </div>
           </div>
         </section>
