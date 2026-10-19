@@ -14,3 +14,4 @@
 - Projects gallery: vertical scroll drives a horizontal track inside a CSS-sticky stage; calculate travel from actual track dimensions and provide native horizontal browsing for reduced motion.
 - About section: keep the homepage studio introduction in a dedicated presentation component using the home route's shared reveal hooks, so the existing scroll lifecycle remains centralized.
 - Footer: keep footer presentation in its own component, use existing section anchors, and leave unavailable external or legal destinations disabled rather than inventing URLs.
+- Consultation: keep the FAQ and form split in a dedicated presentation component using shared home reveal hooks; preserve submission behavior when changing its layout.
