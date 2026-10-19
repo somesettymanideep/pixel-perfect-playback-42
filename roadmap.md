@@ -1,0 +1,2 @@
+- [x] Replace the Projects stack with a horizontal, scroll-revealed gallery matching the reference.
+- [x] Verify gallery scrolling, navigation, reduced motion, and narrow-screen layout.
