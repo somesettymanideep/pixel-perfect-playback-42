@@ -51,10 +51,10 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
                   <div data-project-clip className="project-image overflow-hidden">
                     <img data-project-image src={project.img} alt={`${project.n}, ${project.loc}`} loading="lazy" width={1408} height={1008} className="h-full w-full object-cover" />
                   </div>
-                  <div data-project-caption className="project-caption panel-light relative mx-4 -mt-12 flex min-h-28 items-center justify-between gap-4 bg-services-bg px-5 py-5 text-brand-teal md:mx-6 md:px-6">
+                  <div data-project-caption className="project-caption panel-light relative mx-4 -mt-12 flex items-center justify-between gap-4 bg-services-bg px-5 py-4 text-brand-teal md:mx-6 md:px-6">
                     <div className="min-w-0">
                       <p className="mb-2 text-[0.65rem] uppercase text-brand-teal">{project.cat} — {project.y}</p>
-                      <h3 className="font-display text-3xl leading-tight text-brand-teal md:text-4xl xl:text-5xl">{project.n}</h3>
+                      <h3 className="font-display text-2xl leading-tight text-brand-teal md:text-3xl xl:text-4xl">{project.n}</h3>
                       <p className="mt-1 text-xs text-brand-teal">{project.loc}</p>
                     </div>
                     <ArrowUpRight aria-hidden className="size-5 shrink-0 text-brand-teal transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
