@@ -10,9 +10,9 @@ export function AboutSection() {
         <div>
           <div data-reveal className="mb-6 flex items-center gap-4">
             <span aria-hidden className="h-px w-12 bg-brand-teal" />
-            <p className="text-xs uppercase text-brand-teal">About Us</p>
+            <p className="text-sm uppercase text-brand-teal">About Us</p>
           </div>
-          <h2 id="about-heading" data-reveal className="font-display text-5xl font-light leading-[1.05] text-brand-deep md:text-6xl lg:text-7xl">
+          <h2 id="about-heading" data-reveal className="font-display text-6xl font-light leading-[1.05] text-brand-deep lg:text-7xl xl:text-[5.5rem] 2xl:text-[6rem]">
             <span className="mb-3 block text-brand-teal">SEA</span>
             Studio for Eclectic <span className="italic">Architecture.</span>
           </h2>
