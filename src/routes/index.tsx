@@ -186,7 +186,7 @@ function Index() {
           <div className="absolute inset-0 bg-overlay" />
           <div className="pointer-events-none absolute inset-0 grid-lines" />
           <div className="relative mx-auto w-full max-w-[1600px] px-6 pb-24 md:px-12 md:pb-28">
-            <p data-hero-fade className="label-num mb-8">Studio for Eclectic Architecture — Est. Studio</p>
+            <p data-hero-fade className="label-num mb-8 !text-teal-lift">Studio for Eclectic Architecture — Est. Studio</p>
             <h1 className="font-display text-[13vw] font-light leading-[0.9] tracking-tight md:text-[7.6vw]">
               <span className="mask-line"><span data-hero-line className="block">Architecture</span></span>
               <span className="mask-line"><span data-hero-line className="block italic text-outline">That Shapes</span></span>
