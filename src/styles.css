@@ -145,7 +145,7 @@
   --border: rgb(243 253 254 / 14%);
   --bronze: var(--teal-lift);
   --teal: var(--teal-lift);
-  --muted-foreground: rgb(243 253 254 / 58%);
+  --muted-foreground: rgb(243 253 254 / 74%);
   color: var(--services-bg);
 }
 .panel-deep ::selection { background: var(--brand-teal); color: #ffffff; }
