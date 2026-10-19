@@ -15,10 +15,6 @@ export function ConsultationSection() {
   return (
     <section id="contact" tabIndex={-1} className="panel-light bg-services-bg">
       <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-12 md:py-32">
-        <div className="mb-14 flex items-center gap-4 text-brand-teal" data-reveal>
-          <span className="h-px w-10 bg-brand-teal" aria-hidden />
-          <p className="text-sm uppercase">05 — A conversation starts here</p>
-        </div>
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 xl:gap-28">
           <div data-reveal>
             <p className="mb-4 text-sm uppercase text-brand-teal">FAQs</p>
