@@ -47,7 +47,7 @@
   --charcoal: oklch(0.17 0.025 220);
   --ivory: oklch(0.985 0.004 210);
   --ivory-foreground: oklch(0.22 0.04 220);
-  --bronze: oklch(0.68 0.07 215); /* logo light teal #5CA5B7 */
+  --bronze: #007890; /* brand teal — replaces the light teal #63A4B3 */
   --teal: oklch(0.52 0.1 220); /* logo teal #017890 */
   --services-bg: #f3fdfe; /* services panel background */
   --brand-teal: #067688; /* brand teal */
@@ -61,7 +61,7 @@
   --popover: oklch(0.21 0.03 220);
   --popover-foreground: var(--ivory);
   --primary: var(--bronze);
-  --primary-foreground: oklch(0.15 0.03 220);
+  --primary-foreground: var(--services-bg); /* pale copy on the teal button */
   --secondary: oklch(0.25 0.035 220);
   --secondary-foreground: var(--ivory);
   --muted: oklch(0.25 0.035 220);
