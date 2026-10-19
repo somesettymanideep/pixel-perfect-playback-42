@@ -40,6 +40,7 @@
   --color-brand-deep: var(--brand-deep);
   --color-ink: var(--ink);
   --color-teal-lift: var(--teal-lift);
+  --color-paper: var(--paper);
 }
 
 :root {
@@ -53,6 +54,7 @@
   --brand-teal: #067688; /* brand teal */
   --brand-deep: #0e2638; /* brand deep navy */
   --ink: #000000; /* body copy on light panels */
+  --paper: #ffffff; /* white panel ground (projects) */
   --teal-lift: color-mix(in oklab, var(--brand-teal) 42%, var(--services-bg)); /* light teal — readable on navy */
   --background: var(--charcoal);
   --foreground: var(--ivory);
@@ -210,8 +212,8 @@
 .project-item { width: clamp(340px, 44vw, 680px); flex-shrink: 0; }
 .project-image { height: min(48svh, 540px); min-height: 220px; }
 .project-caption { box-shadow: 0 12px 28px color-mix(in oklab, var(--brand-deep) 24%, transparent); }
-.project-dot { color: var(--muted-foreground); }
-.project-dot[aria-current="true"] { color: var(--services-bg); box-shadow: inset 0 0 0 1px var(--brand-teal); }
+.project-dot { color: rgb(6 118 136 / 38%); }
+.project-dot[aria-current="true"] { color: var(--brand-deep); box-shadow: inset 0 0 0 1px var(--brand-teal); }
 @media (max-width: 767px) {
   .project-track { gap: 18px; padding: 0 24px; }
   .project-item { width: 84vw; }

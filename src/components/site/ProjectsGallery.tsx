@@ -26,15 +26,15 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
   };
 
   return (
-    <section id="projects" tabIndex={-1} aria-labelledby="projects-heading" className="project-gallery panel-deep relative bg-brand-deep">
+    <section id="projects" tabIndex={-1} aria-labelledby="projects-heading" className="project-gallery panel-light relative bg-paper">
       <div data-project-stage className="project-stage">
-        <div className="pointer-events-none absolute inset-0 grid-lines opacity-50" />
+        <div className="pointer-events-none absolute inset-0 grid-lines opacity-70" />
         <div className="relative mx-auto flex w-full max-w-[1600px] items-end justify-between gap-6 px-6 pb-8 md:px-12 md:pb-10">
           <div>
-            <p className="mb-3 text-xs uppercase text-teal-lift">Portfolio</p>
-            <h2 id="projects-heading" className="font-display text-5xl font-light leading-none md:text-7xl">Our Projects</h2>
+            <p className="mb-3 text-xs uppercase text-brand-teal">Portfolio</p>
+            <h2 id="projects-heading" className="font-display text-5xl font-light leading-none md:text-7xl"><span className="block text-brand-gradient">Our Projects</span></h2>
           </div>
-          <span aria-hidden className="font-display text-7xl leading-none text-services-bg/15 md:text-8xl">.03</span>
+          <span aria-hidden className="font-display text-7xl leading-none text-brand-deep/18 md:text-8xl">.03</span>
         </div>
         <div data-project-viewport className="project-viewport relative" onScroll={(event) => {
           if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -51,7 +51,7 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
                   <div data-project-clip className="project-image overflow-hidden">
                     <img data-project-image src={project.img} alt={`${project.n}, ${project.loc}`} loading="lazy" width={1408} height={1008} className="h-full w-full object-cover" />
                   </div>
-                  <div className="project-caption relative mx-4 -mt-12 flex min-h-28 items-center justify-between gap-4 bg-brand-deep px-5 py-5 md:mx-6 md:px-6">
+                  <div data-project-caption className="project-caption panel-deep relative mx-4 -mt-12 flex min-h-28 items-center justify-between gap-4 bg-brand-deep px-5 py-5 md:mx-6 md:px-6">
                     <div className="min-w-0">
                       <p className="mb-2 text-[0.65rem] uppercase text-teal-lift">{project.cat} — {project.y}</p>
                       <h3 className="font-display text-2xl leading-tight md:text-3xl">{project.n}</h3>
@@ -73,13 +73,13 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
               </Button>
             ))}
           </div>
-          <div className="hidden h-px max-w-80 flex-1 overflow-hidden bg-border sm:block" aria-hidden>
-            <span data-project-progress className="block h-full origin-left bg-teal-lift" />
+          <div className="hidden h-px max-w-80 flex-1 overflow-hidden bg-brand-deep/22 sm:block" aria-hidden>
+            <span data-project-progress className="block h-full origin-left bg-brand-teal" />
           </div>
           <div className="flex items-center gap-3">
             <span className="mr-2 text-xs tabular-nums text-muted-foreground"><span data-project-current>01</span> / {String(projects.length).padStart(2, "0")}</span>
-            <Button variant="ghost" size="icon" title="Previous project" aria-label="Previous project" className="rounded-full border border-border text-services-bg" onClick={() => { const active = Number(document.querySelector("[data-project-current]")?.textContent || 1); goTo(Math.max(0, active - 2)); }}><ArrowLeft /></Button>
-            <Button variant="ghost" size="icon" title="Next project" aria-label="Next project" className="rounded-full border border-border text-services-bg" onClick={() => { const active = Number(document.querySelector("[data-project-current]")?.textContent || 1); goTo(Math.min(projects.length - 1, active)); }}><ArrowRight /></Button>
+            <Button variant="ghost" size="icon" title="Previous project" aria-label="Previous project" className="rounded-full border border-border text-brand-deep" onClick={() => { const active = Number(document.querySelector("[data-project-current]")?.textContent || 1); goTo(Math.max(0, active - 2)); }}><ArrowLeft /></Button>
+            <Button variant="ghost" size="icon" title="Next project" aria-label="Next project" className="rounded-full border border-border text-brand-deep" onClick={() => { const active = Number(document.querySelector("[data-project-current]")?.textContent || 1); goTo(Math.min(projects.length - 1, active)); }}><ArrowRight /></Button>
           </div>
         </div>
       </div>
