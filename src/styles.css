@@ -239,10 +239,6 @@
   .project-track { will-change: auto; }
   .project-item { scroll-snap-align: center; }
 }
-.ticker-mask { -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 9%, #000 91%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, #000 9%, #000 91%, transparent 100%); }
-@media (prefers-reduced-motion: reduce) {
-  .ticker-track { animation: none; }
-}
 /* Testimonials: three cards in view, the track slides one card at a time. */
 .testi-viewport { overflow: hidden; }
 .testi-track { display: flex; gap: 24px; will-change: transform; transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
