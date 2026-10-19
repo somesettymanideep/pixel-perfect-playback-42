@@ -307,27 +307,6 @@ function Index() {
             </div>
           </div>
         </section>
-          <div className="mx-auto max-w-[1600px] px-6 py-28 md:px-12 md:py-36">
-            <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-              <p className="label-num !text-teal">02 — The Studio</p>
-              <p className="max-w-sm text-sm text-ivory-foreground/60">Figures shown are placeholders, to be updated with the studio's verified numbers.</p>
-            </div>
-            <div className="mt-16 grid grid-cols-2 gap-y-16 md:grid-cols-4">
-              {STATS.map((s) => (
-                <div key={s.l} className="relative flex flex-col items-center text-center">
-                  <svg className="absolute -top-6 h-44 w-44 md:h-52 md:w-52" viewBox="0 0 110 110" aria-hidden>
-                    <circle data-ring cx="55" cy="55" r="54" fill="none" stroke="var(--bronze)" strokeWidth="0.4" strokeDasharray="340" />
-                  </svg>
-                  <div className="relative flex h-32 items-center font-display text-6xl font-light md:h-40 md:text-8xl">
-                    <span data-count={s.v || undefined}>{s.v || "—"}</span>
-                    <span className="ml-1 font-sans text-sm text-teal md:text-base">{s.suffix}</span>
-                  </div>
-                  <p className="relative mt-6 text-[0.68rem] uppercase tracking-[0.3em] text-ivory-foreground/60">{s.l}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* PROJECTS */}
         <section id="projects" tabIndex={-1} className="relative">
