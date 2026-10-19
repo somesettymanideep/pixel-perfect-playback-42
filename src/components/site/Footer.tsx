@@ -46,14 +46,14 @@ export function Footer() {
           </nav>
           <div>
             <h2 className="mb-5 font-display text-sm font-semibold uppercase text-teal-lift">Contact</h2>
-            <dl className="space-y-4">
+            <dl className="space-y-5">
               {offices.map(office => <div key={office.name}>
-                <dt className="text-[0.625rem] font-semibold uppercase text-teal-lift">{office.name}</dt>
-                <dd className="mt-1 flex gap-1.5 text-[0.6875rem] leading-relaxed text-services-bg/80"><MapPin aria-hidden className="mt-0.5 h-3 w-3 shrink-0 text-teal-lift" /><span>{office.address}</span></dd>
+                <dt className="text-xs font-semibold uppercase text-teal-lift">{office.name}</dt>
+                <dd className="mt-1.5 flex gap-2 text-xs leading-relaxed text-services-bg/85"><MapPin aria-hidden className="mt-0.5 h-3.5 w-3.5 shrink-0 text-teal-lift" /><span>{office.address}</span></dd>
               </div>)}
               <div className="border-t border-border pt-3">
-                <dt className="text-[0.625rem] font-semibold uppercase text-teal-lift">Phone</dt>
-                <dd className="mt-1"><a href="tel:+919000299600" className="inline-flex items-center gap-1.5 text-[0.6875rem] font-semibold hover:text-teal-lift"><Phone aria-hidden className="h-3 w-3" />+91 9000299600</a></dd>
+                <dt className="text-xs font-semibold uppercase text-teal-lift">Phone</dt>
+                <dd className="mt-1.5"><a href="tel:+919000299600" className="inline-flex items-center gap-1.5 text-sm font-semibold hover:text-teal-lift"><Phone aria-hidden className="h-3.5 w-3.5" />+91 9000299600</a></dd>
               </div>
             </dl>
           </div>
