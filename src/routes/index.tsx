@@ -5,6 +5,7 @@ import { ConsultationSection } from "@/components/site/ConsultationSection";
 import { ProjectsGallery } from "@/components/site/ProjectsGallery";
 import { AboutSection } from "@/components/site/AboutSection";
 import { Footer } from "@/components/site/Footer";
+import { TestimonialsSection } from "@/components/site/TestimonialsSection";
 import logo from "@/assets/sea-logo.png.asset.json";
 import hero from "@/assets/hero.jpg";
 import sArch from "@/assets/s-arch.jpg";
@@ -16,7 +17,6 @@ import sBim from "@/assets/s-bim.jpg";
 import p1 from "@/assets/p1.jpg";
 import p2 from "@/assets/p2.jpg";
 import p3 from "@/assets/p3.jpg";
-import testiBg from "@/assets/testi-bg.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,6 +67,9 @@ const TESTIMONIALS = [
   { q: "They listened to how we wanted to live before drawing a single line. The house feels inevitable now.", n: "Sample Client", r: "Private Residence" },
   { q: "Every material, every junction was considered. It is the calmest place we have ever lived.", n: "Sample Client", r: "Penthouse Interior" },
   { q: "From design to handover they carried the whole project. We simply moved in.", n: "Sample Client", r: "Turnkey Villa" },
+  { q: "The courtyard changed how our family spends an evening. We did not know we needed it until we had it.", n: "Sample Client", r: "Garden Residence" },
+  { q: "They held the budget and the vision at the same time. Nothing on site felt improvised.", n: "Sample Client", r: "Boutique Hotel" },
+  { q: "Drawings, models and site visits all told the same story. Handover felt like a formality.", n: "Sample Client", r: "Skyline Tower" },
 ];
 
 function Index() {
@@ -359,7 +362,7 @@ function Index() {
         {/* PROJECTS */}
         <ProjectsGallery projects={PROJECTS} />
 
-        <Testimonials />
+        <TestimonialsSection testimonials={TESTIMONIALS} />
 
         {/* CONTACT */}
         <ConsultationSection />
@@ -367,49 +370,5 @@ function Index() {
 
       <Footer />
     </div>
-  );
-}
-
-function Testimonials() {
-  const [i, setI] = useState(0);
-  const n = TESTIMONIALS.length;
-  useEffect(() => {
-    const id = setInterval(() => setI((v) => (v + 1) % n), 7000);
-    return () => clearInterval(id);
-  }, [i, n]);
-  return (
-    <section id="testimonials" tabIndex={-1} aria-roledescription="carousel" aria-label="Client testimonials" className="relative overflow-hidden">
-      <img src={testiBg} alt="" loading="lazy" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-background/75" />
-      <div className="relative mx-auto max-w-[1200px] px-6 py-32 md:px-12 md:py-44">
-        <p className="label-num !text-sm">04 — Voices</p>
-        <div className="relative mt-10 grid min-h-[22rem] md:min-h-[18rem]" aria-live="polite">
-          {TESTIMONIALS.map((t, k) => (
-            <figure key={k} aria-hidden={k !== i} className={`col-start-1 row-start-1 transition-all duration-1000 ${k === i ? "opacity-100" : "pointer-events-none translate-y-4 opacity-0"}`}>
-              <blockquote className="font-display text-3xl font-light italic leading-snug md:text-5xl">“{t.q}”</blockquote>
-              <figcaption className="mt-10 flex items-center gap-5">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full border border-bronze font-display text-xl text-bronze">SC</span>
-                <span>
-                  <span className="block text-sm">{t.n}</span>
-                  <span className="block text-[0.68rem] uppercase tracking-[0.28em] text-muted-foreground">{t.r}</span>
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
-        <div className="mt-12 flex items-center gap-6">
-          <button aria-label="Previous testimonial" onClick={() => setI((i - 1 + n) % n)} className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-colors hover:border-bronze">←</button>
-          <button aria-label="Next testimonial" onClick={() => setI((i + 1) % n)} className="flex h-12 w-12 items-center justify-center rounded-full border border-border transition-colors hover:border-bronze">→</button>
-          <div className="ml-4 flex flex-1 gap-2" aria-hidden>
-            {TESTIMONIALS.map((_, k) => (
-              <span key={k} className="h-px flex-1 bg-border">
-                <span className={`block h-full bg-bronze transition-all duration-700 ${k <= i ? "w-full" : "w-0"}`} />
-              </span>
-            ))}
-          </div>
-          <span className="text-xs tabular-nums text-muted-foreground">0{i + 1} / 0{n}</span>
-        </div>
-      </div>
-    </section>
   );
 }

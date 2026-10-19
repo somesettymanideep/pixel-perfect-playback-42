@@ -246,3 +246,19 @@
 @media (prefers-reduced-motion: reduce) {
   .ticker-track { animation: none; }
 }
+/* Testimonials: three cards in view, the track slides one card at a time. */
+.testi-viewport { overflow: hidden; }
+.testi-track { display: flex; gap: 24px; will-change: transform; transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1); }
+.testi-card { flex: 0 0 calc((100% - 48px) / 3); }
+@media (max-width: 1023px) {
+  .testi-card { flex-basis: calc((100% - 24px) / 2); }
+}
+@media (max-width: 639px) {
+  .testi-track { gap: 18px; }
+  .testi-card { flex-basis: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .testi-viewport { overflow-x: auto; scroll-snap-type: x mandatory; }
+  .testi-track { transition: none; will-change: auto; }
+  .testi-card { scroll-snap-align: start; }
+}
