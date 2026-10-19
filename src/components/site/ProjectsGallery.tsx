@@ -4,6 +4,11 @@ import { Button } from "@/components/ui/button";
 type Project = { n: string; loc: string; cat: string; y: string; img: string };
 
 export function ProjectsGallery({ projects }: { projects: Project[] }) {
+  const updateActive = (section: HTMLElement, index: number) => {
+    const counter = section.querySelector("[data-project-current]");
+    if (counter) counter.textContent = String(index + 1).padStart(2, "0");
+    section.querySelectorAll("[data-project-dot]").forEach((dot, current) => dot.setAttribute("aria-current", String(current === index)));
+  };
   const goTo = (index: number) => {
     const section = document.getElementById("projects");
     const stage = section?.querySelector<HTMLElement>("[data-project-stage]");
@@ -12,6 +17,7 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
     if (!section || !stage || !viewport || !card) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       viewport.scrollTo({ left: card.offsetLeft - 24, behavior: "auto" });
+      updateActive(section, index);
       return;
     }
     const travel = section.offsetHeight - stage.offsetHeight;
@@ -30,7 +36,14 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
           </div>
           <span aria-hidden className="font-display text-7xl leading-none text-services-bg/15 md:text-8xl">.03</span>
         </div>
-        <div data-project-viewport className="project-viewport relative">
+        <div data-project-viewport className="project-viewport relative" onScroll={(event) => {
+          if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+          const viewport = event.currentTarget;
+          const section = viewport.closest<HTMLElement>("#projects");
+          if (!section) return;
+          const distance = viewport.scrollWidth - viewport.clientWidth;
+          updateActive(section, Math.round(viewport.scrollLeft / Math.max(1, distance) * (projects.length - 1)));
+        }}>
           <div data-project-track className="project-track">
             {projects.map((project, index) => (
               <article key={project.n} data-project-card className="project-item">
@@ -55,7 +68,7 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
         <div className="relative mx-auto mt-6 flex w-full max-w-[1600px] items-center justify-between gap-6 px-6 md:mt-8 md:px-12">
           <div className="flex items-center gap-2" aria-label="Choose project">
             {projects.map((project, index) => (
-              <Button key={project.n} variant="ghost" size="icon" className="project-dot size-8 rounded-full" aria-label={`Show ${project.n}`} data-project-dot onClick={() => goTo(index)}>
+              <Button key={project.n} variant="ghost" size="icon" className="project-dot size-8 rounded-full" aria-label={`Show ${project.n}`} aria-current={index === 0 ? "true" : "false"} data-project-dot onClick={() => goTo(index)}>
                 <span className="size-1.5 rounded-full bg-current" />
               </Button>
             ))}
