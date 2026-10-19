@@ -22,7 +22,7 @@ export function Footer() {
             <a href="#top" aria-label="SEA home" className="inline-flex rounded-[5px] bg-paper px-3 py-2">
               <img src={logo.url} alt="SEA — Studio for Eclectic Architecture" width={92} height={43} className="h-9 w-auto" loading="lazy" />
             </a>
-            <h2 className="mt-6 max-w-56 text-xs font-semibold uppercase leading-relaxed text-teal-lift">Studio for Eclectic Architecture</h2>
+            <h2 className="mt-6 max-w-56 text-sm font-semibold uppercase leading-relaxed text-teal-lift">Studio for Eclectic Architecture</h2>
             <p className="mt-3 max-w-64 text-xs leading-relaxed text-services-bg/80">Architecture, interiors, landscapes and technical expertise brought together to create thoughtfully designed spaces.</p>
             <div className="mt-5 flex gap-2" aria-label="Social media">
               {[{ name: "Instagram", icon: Instagram }, { name: "Pinterest", icon: null }, { name: "LinkedIn", icon: Linkedin }, { name: "Facebook", icon: Facebook }].map(({ name, icon: Icon }) => (
@@ -33,19 +33,19 @@ export function Footer() {
             </div>
           </div>
           <nav aria-label="Footer explore">
-            <h2 className="mb-5 font-display text-xs font-semibold uppercase text-teal-lift">Explore</h2>
+            <h2 className="mb-5 font-display text-sm font-semibold uppercase text-teal-lift">Explore</h2>
             <ul className="space-y-2 text-xs text-services-bg/80">
               {explore.map(([label, href]) => <li key={label}><a href={href} className="transition-colors hover:text-services-bg">{label}</a></li>)}
             </ul>
           </nav>
           <nav aria-label="Footer services">
-            <h2 className="mb-5 font-display text-xs font-semibold uppercase text-teal-lift">Services</h2>
+            <h2 className="mb-5 font-display text-sm font-semibold uppercase text-teal-lift">Services</h2>
             <ul className="space-y-2 text-xs text-services-bg/80">
               {services.map(service => <li key={service}><a href="#services" className="transition-colors hover:text-services-bg">{service}</a></li>)}
             </ul>
           </nav>
           <div>
-            <h2 className="mb-5 font-display text-xs font-semibold uppercase text-teal-lift">Contact</h2>
+            <h2 className="mb-5 font-display text-sm font-semibold uppercase text-teal-lift">Contact</h2>
             <dl className="space-y-4">
               {offices.map(office => <div key={office.name}>
                 <dt className="text-[0.625rem] font-semibold uppercase text-teal-lift">{office.name}</dt>
