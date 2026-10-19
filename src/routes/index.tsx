@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Cursor } from "@/components/site/Cursor";
-import { ConsultationForm } from "@/components/site/ConsultationForm";
+import { ConsultationSection } from "@/components/site/ConsultationSection";
 import { ProjectsGallery } from "@/components/site/ProjectsGallery";
 import { AboutSection } from "@/components/site/AboutSection";
 import { Footer } from "@/components/site/Footer";
@@ -362,27 +362,7 @@ function Index() {
         <Testimonials />
 
         {/* CONTACT */}
-        <section id="contact" tabIndex={-1} className="bg-ivory text-ivory-foreground">
-          <div className="mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
-            <div className="md:col-span-5">
-              <p className="label-num !text-teal">05 — Consultation</p>
-              <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] md:text-7xl">
-                <span className="mask-line"><span className="block">Let's Shape</span></span>
-                <span className="mask-line"><span className="block italic text-bronze">Your Next</span></span>
-                <span className="mask-line"><span className="block">Space.</span></span>
-              </h2>
-              <p data-reveal className="mt-8 max-w-sm text-ivory-foreground/70">Share a few details about your site and ambitions. We'll arrange an unhurried first conversation with a principal.</p>
-              <dl data-reveal className="mt-12 space-y-6 text-sm">
-                <div><dt className="label-num !text-teal">Studio</dt><dd className="mt-2">Address to be confirmed</dd></div>
-                <div><dt className="label-num !text-teal">Email</dt><dd className="mt-2">studio@example.com</dd></div>
-                <div><dt className="label-num !text-teal">Phone</dt><dd className="mt-2">+91 00000 00000</dd></div>
-              </dl>
-            </div>
-            <div className="md:col-span-7">
-              <ConsultationForm />
-            </div>
-          </div>
-        </section>
+        <ConsultationSection />
       </main>
 
       <Footer />
