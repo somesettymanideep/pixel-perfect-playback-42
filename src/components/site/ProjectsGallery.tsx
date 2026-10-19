@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type Project = { n: string; loc: string; cat: string; y: string; img: string };
+type Project = { n: string; loc?: string; cat: string; y?: string; img: string };
 
 export function ProjectsGallery({ projects }: { projects: Project[] }) {
   const updateActive = (section: HTMLElement, index: number) => {
