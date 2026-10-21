@@ -50,12 +50,12 @@ const SERVICES = [
   { t: "BIM Services", d: "Coordinated digital models that resolve every clash before the first brick is laid on site.", img: sBim },
 ];
 
-// Editable placeholders — replace with the studio's real figures.
+// Studio figures as supplied by the studio.
 const STATS = [
-  { v: 0, suffix: "+", l: "Projects Completed" },
-  { v: 0, suffix: "k sq ft", l: "Area Designed" },
-  { v: 0, suffix: "", l: "Years of Experience" },
-  { v: 0, suffix: "%", l: "Client Satisfaction" },
+  { v: 16, suffix: "+", l: "Years of Experience" },
+  { v: 100, suffix: "%", l: "Client Satisfaction" },
+  { v: 400, suffix: "+", l: "Projects Completed" },
+  { v: 1000, suffix: "K sq ft", l: "Area Designed" },
 ];
 
 const PROJECTS = [
@@ -319,9 +319,6 @@ function Index() {
                   A working record of what the studio has made and how it works — light, material, time.
                 </p>
                 <div data-line className="mt-6 h-px w-24 bg-brand-teal lg:ml-auto" />
-                <p data-reveal className="mt-6 max-w-xs text-xs leading-relaxed text-muted-foreground lg:ml-auto">
-                  Figures shown are placeholders, to be replaced with the studio's verified numbers.
-                </p>
               </div>
             </div>
             <div className="mt-20 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
