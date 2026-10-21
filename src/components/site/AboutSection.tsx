@@ -8,12 +8,12 @@ export function AboutSection() {
     <section id="about" tabIndex={-1} aria-labelledby="about-heading" className="panel-light relative overflow-hidden bg-paper">
       <div className="mx-auto grid max-w-[1600px] items-center gap-14 px-6 py-20 md:px-12 md:py-28 lg:grid-cols-2 lg:gap-16">
         <div>
-          <div data-reveal className="mb-6 flex items-center gap-4">
-            <span aria-hidden className="h-px w-12 bg-brand-teal" />
-            <p className="text-base uppercase text-brand-teal">About Us</p>
+          <div data-reveal className="mb-5 flex items-center gap-5">
+            <span aria-hidden className="h-px w-16 bg-brand-teal" />
+            <p className="font-display text-4xl font-light uppercase tracking-[0.06em] text-brand-teal sm:text-5xl xl:text-[3.5rem]">About Us</p>
           </div>
-          <h2 id="about-heading" data-reveal className="font-display text-5xl font-light leading-[1.05] text-brand-deep sm:text-6xl xl:text-[4.25rem] 2xl:text-[5rem]">
-            <span className="mb-3 block text-brand-teal">SEA</span>
+          <h2 id="about-heading" data-reveal className="font-display text-4xl font-light leading-[1.12] text-brand-deep sm:text-5xl xl:text-[3.25rem] 2xl:text-[3.75rem]">
+            <span className="mb-2 block text-brand-teal">SEA</span>
             Studio for Eclectic <span className="italic">Architecture.</span>
           </h2>
           <p data-reveal className="mt-7 max-w-lg text-base leading-relaxed text-ink md:text-lg">
