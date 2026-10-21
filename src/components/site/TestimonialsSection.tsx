@@ -89,6 +89,12 @@ export function TestimonialsSection({ testimonials }: { testimonials: Testimonia
         <p className="sr-only" aria-live="polite">
           Showing testimonials {index + 1} to {index + perView} of {n}
         </p>
+        <div className="mb-14 md:mb-20">
+          <p data-reveal className="font-display text-3xl font-light uppercase text-services-bg sm:text-4xl xl:text-[3rem]">Testimonials</p>
+          <h2 data-mask className="mt-6 font-display text-[1.75rem] font-light leading-[1.3] text-services-bg">
+            <span className="mask-line"><span className="block">In their own <span className="italic">words.</span></span></span>
+          </h2>
+        </div>
         <div
           ref={viewport}
           className="testi-viewport"
