@@ -85,10 +85,14 @@ export function TestimonialsSection({ testimonials }: { testimonials: Testimonia
     <section id="testimonials" tabIndex={-1} aria-roledescription="carousel" aria-label="Client testimonials" className="relative overflow-hidden">
       <img src={banner.url} alt="" loading="lazy" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-brand-deep/60" />
-      <div className="relative mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-44">
-        <p className="sr-only" aria-live="polite">
-          Showing testimonials {index + 1} to {index + perView} of {n}
-        </p>
+        <div className="relative mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-44">
+          <div className="mb-16 max-w-3xl">
+            <p className="font-display text-3xl font-light uppercase tracking-[0.06em] text-paper sm:text-4xl xl:text-[3rem]">Voices</p>
+            <h2 className="mt-6 font-display text-[1.75rem] font-light leading-[1.3] text-paper">What our <span className="italic text-teal-lift">clients say.</span></h2>
+          </div>
+          <p className="sr-only" aria-live="polite">
+            Showing testimonials {index + 1} to {index + perView} of {n}
+          </p>
         <div
           ref={viewport}
           className="testi-viewport"
