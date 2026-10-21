@@ -8,8 +8,7 @@ export function AboutSection() {
     <section id="about" tabIndex={-1} aria-labelledby="about-heading" className="panel-light relative overflow-hidden bg-paper">
       <div className="mx-auto grid max-w-[1600px] items-center gap-14 px-6 py-20 md:px-12 md:py-28 lg:grid-cols-2 lg:gap-16">
         <div>
-          <div data-reveal className="mb-5 flex items-center gap-5">
-            <span aria-hidden className="h-px w-16 bg-brand-teal" />
+          <div data-reveal className="mb-5">
             <p className="font-display text-3xl font-light uppercase tracking-[0.06em] text-brand-teal sm:text-4xl xl:text-[3rem]">About Us</p>
           </div>
           <h2 id="about-heading" data-reveal className="font-display text-[1.75rem] font-light leading-[1.3] whitespace-normal text-brand-deep sm:whitespace-nowrap">

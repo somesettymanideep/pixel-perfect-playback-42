@@ -267,7 +267,7 @@ function Index() {
           <div className="relative mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
             <div className="md:col-span-5">
               <div className="md:sticky md:top-32">
-                <p className="font-display text-3xl font-light uppercase text-brand-teal sm:text-4xl xl:text-[3rem]">01 — Services</p>
+                <p className="font-display text-3xl font-light uppercase text-brand-teal sm:text-4xl xl:text-[3rem]">Services</p>
                 <h2 data-mask className="mt-6 font-display text-[1.75rem] font-light leading-[1.3]">
                   <span className="mask-line"><span className="text-brand-gradient block">Six <span className="italic">disciplines,</span> one hand.</span></span>
                 </h2>
@@ -309,7 +309,7 @@ function Index() {
           <div className="relative mx-auto max-w-[1600px] px-6 py-28 md:px-12 md:py-40">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <p className="font-display text-3xl font-light uppercase text-teal-lift sm:text-4xl xl:text-[3rem]">02 — The Studio</p>
+                <p className="font-display text-3xl font-light uppercase text-teal-lift sm:text-4xl xl:text-[3rem]">The Studio</p>
                 <h2 data-mask className="mt-6 font-display text-[1.75rem] font-light leading-[1.3]">
                   <span className="mask-line"><span className="text-brand-gradient-pale block">The Studio, <span className="italic">measured.</span></span></span>
                 </h2>
