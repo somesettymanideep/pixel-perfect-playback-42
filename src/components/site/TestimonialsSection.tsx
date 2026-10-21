@@ -86,13 +86,12 @@ export function TestimonialsSection({ testimonials }: { testimonials: Testimonia
       <img src={banner.url} alt="" loading="lazy" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-brand-deep/60" />
       <div className="relative mx-auto max-w-[1600px] px-6 py-32 md:px-12 md:py-44">
-        <p className="label-num !text-sm">04 — Voices</p>
         <p className="sr-only" aria-live="polite">
           Showing testimonials {index + 1} to {index + perView} of {n}
         </p>
         <div
           ref={viewport}
-          className="testi-viewport mt-12"
+          className="testi-viewport"
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
           onFocusCapture={() => setPaused(true)}
@@ -109,12 +108,12 @@ export function TestimonialsSection({ testimonials }: { testimonials: Testimonia
             {slides.map((t, k) => (
               <figure key={k} aria-roledescription="slide" aria-hidden={k >= n || undefined} aria-label={`Testimonial ${(k % n) + 1} of ${n}`} className="testi-card panel-deep flex flex-col rounded-[var(--radius)] border border-border bg-brand-deep/70 p-8 backdrop-blur-sm transition-colors duration-500 hover:border-teal md:p-10">
                 <span aria-hidden className="font-display text-6xl leading-[0.6] text-teal-lift">&ldquo;</span>
-                <blockquote className="mt-6 font-display text-xl font-light italic leading-snug md:text-2xl">{t.q}</blockquote>
+                <blockquote className="mt-6 font-display text-xl font-light italic leading-snug text-paper md:text-2xl">{t.q}</blockquote>
                 <figcaption className="mt-auto flex items-center gap-4 pt-10">
                   <span aria-hidden className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-teal-lift/50 font-display text-lg text-teal-lift">{initials(t.n)}</span>
                   <span className="min-w-0">
-                    <span className="block text-sm">{t.n}</span>
-                    <span className="block text-[0.68rem] uppercase tracking-[0.28em] text-muted-foreground">{t.r}</span>
+                    <span className="block text-sm text-paper">{t.n}</span>
+                    <span className="block text-[0.68rem] uppercase tracking-[0.28em] text-paper">{t.r}</span>
                   </span>
                 </figcaption>
               </figure>

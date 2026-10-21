@@ -6,3 +6,4 @@
 - [x] Redesign the testimonials as a three-card sliding gallery; verify desktop, tablet, narrow and reduced-motion layouts.
 - [x] In About Us, Services and Projects: step the section titles down and the labels, lead text and item names up; verify sizes and that nothing clips.
 - [x] Replace the placeholder projects with the studio's five real projects and their supplied photos; verify every photo loads and each caption reads correctly.
+- [x] Match Services, Studio, Projects, FAQs and Consultation typography to About; remove Voices label and use white testimonial text; verify layouts.

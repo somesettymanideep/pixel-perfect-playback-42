@@ -17,9 +17,9 @@ export function ConsultationSection() {
       <div className="mx-auto max-w-[1600px] px-6 py-24 md:px-12 md:py-32">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-20 xl:gap-28">
           <div data-reveal>
-            <p className="mb-4 text-sm uppercase text-brand-teal">FAQs</p>
-            <h2 className="font-display text-5xl font-light leading-[1.05] text-brand-deep sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-[4.25rem]">
-              A little clarity.<br /><span className="italic text-brand-teal">Before we begin.</span>
+            <p className="mb-4 font-display text-3xl font-light uppercase text-brand-teal sm:text-4xl xl:text-[3rem]">FAQs</p>
+            <h2 className="font-display text-[1.75rem] font-light leading-[1.3] text-brand-deep">
+              A little clarity. <span className="italic text-brand-teal">Before we begin.</span>
             </h2>
             <Accordion type="single" collapsible defaultValue="faq-0" className="mt-10 border-t border-border">
               {FAQS.map((faq, index) => (
@@ -38,8 +38,8 @@ export function ConsultationSection() {
           <div className="lg:border-l lg:border-border lg:pl-12 xl:pl-16" data-reveal>
             <div className="mb-8 flex items-start justify-between gap-5">
               <div>
-                <p className="mb-4 text-sm uppercase text-brand-teal">Consultation</p>
-                <h2 className="font-display text-5xl font-light leading-[1.05] text-brand-deep sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-[4.25rem]">Let's shape<br /><span className="italic text-brand-teal">your next space.</span></h2>
+                <p className="mb-4 font-display text-3xl font-light uppercase text-brand-teal sm:text-4xl xl:text-[3rem]">Consultation</p>
+                <h2 className="font-display text-[1.75rem] font-light leading-[1.3] text-brand-deep">Let's shape <span className="italic text-brand-teal">your next space.</span></h2>
               </div>
               <ArrowUpRight className="mt-8 hidden size-10 shrink-0 text-brand-teal sm:block" strokeWidth={1} aria-hidden />
             </div>

@@ -267,11 +267,9 @@ function Index() {
           <div className="relative mx-auto grid max-w-[1600px] gap-16 px-6 py-28 md:grid-cols-12 md:px-12 md:py-40">
             <div className="md:col-span-5">
               <div className="md:sticky md:top-32">
-                <p className="label-num !text-base">01 — Services</p>
-                <h2 data-mask className="mt-6 font-display text-6xl font-light leading-[0.95] lg:text-7xl xl:text-[5rem] 2xl:text-[6rem]">
-                  <span className="mask-line"><span className="text-brand-gradient block">Six</span></span>
-                  <span className="mask-line"><span className="text-brand-gradient-inv block italic">disciplines,</span></span>
-                  <span className="mask-line"><span className="text-brand-gradient block">one hand.</span></span>
+                <p className="font-display text-3xl font-light uppercase text-brand-teal sm:text-4xl xl:text-[3rem]">01 — Services</p>
+                <h2 data-mask className="mt-6 font-display text-[1.75rem] font-light leading-[1.3]">
+                  <span className="mask-line"><span className="text-brand-gradient block">Six <span className="italic">disciplines,</span> one hand.</span></span>
                 </h2>
                 <p data-reveal className="mt-8 max-w-md text-base leading-relaxed text-ink md:text-lg">Every project is held by a single studio — so the building, the room and the garden speak one language.</p>
               </div>
@@ -311,10 +309,9 @@ function Index() {
           <div className="relative mx-auto max-w-[1600px] px-6 py-28 md:px-12 md:py-40">
             <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
               <div>
-                <p className="label-num !text-sm">02 — The Studio</p>
-                <h2 data-mask className="mt-6 font-display text-7xl font-light leading-[0.95] lg:text-8xl xl:text-[6.3rem] 2xl:text-[7.2rem]">
-                  <span className="mask-line"><span className="text-brand-gradient-pale block">The Studio,</span></span>
-                  <span className="mask-line"><span className="text-brand-gradient-pale block italic">measured.</span></span>
+                <p className="font-display text-3xl font-light uppercase text-teal-lift sm:text-4xl xl:text-[3rem]">02 — The Studio</p>
+                <h2 data-mask className="mt-6 font-display text-[1.75rem] font-light leading-[1.3]">
+                  <span className="mask-line"><span className="text-brand-gradient-pale block">The Studio, <span className="italic">measured.</span></span></span>
                 </h2>
               </div>
               <div className="max-w-md lg:pb-5 lg:text-right">
