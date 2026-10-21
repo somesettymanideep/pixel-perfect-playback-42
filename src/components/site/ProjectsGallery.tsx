@@ -34,7 +34,6 @@ export function ProjectsGallery({ projects }: { projects: Project[] }) {
             <p className="mb-3 font-display text-3xl font-light uppercase text-brand-teal sm:text-4xl xl:text-[3rem]">Portfolio</p>
             <h2 id="projects-heading" className="font-display text-[1.75rem] font-light leading-[1.3]"><span className="block text-brand-gradient">Our Projects</span></h2>
           </div>
-          <span aria-hidden className="font-display text-3xl leading-none text-brand-deep/18 sm:text-4xl xl:text-[3rem]">.03</span>
         </div>
         <div data-project-viewport className="project-viewport relative" onScroll={(event) => {
           if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
