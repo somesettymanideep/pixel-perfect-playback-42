@@ -12,8 +12,8 @@ export function AboutSection() {
             <span aria-hidden className="h-px w-16 bg-brand-teal" />
             <p className="font-display text-3xl font-light uppercase tracking-[0.06em] text-brand-teal sm:text-4xl xl:text-[3rem]">About Us</p>
           </div>
-          <h2 id="about-heading" data-reveal className="font-display text-4xl font-light leading-[1.12] text-brand-deep sm:text-5xl xl:text-[3.25rem] 2xl:text-[3.75rem]">
-            <span className="mb-2 block text-brand-teal">SEA</span>
+          <h2 id="about-heading" data-reveal className="font-display text-[1.5rem] font-light leading-[1.3] text-brand-deep">
+            <span className="mb-1.5 block text-brand-teal">SEA</span>
             Studio for Eclectic <span className="italic">Architecture.</span>
           </h2>
           <p data-reveal className="mt-7 max-w-lg text-base leading-relaxed text-ink md:text-lg">
