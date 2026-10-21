@@ -212,19 +212,21 @@ function Index() {
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-ivory focus:p-3 focus:text-ivory-foreground">Skip to content</a>
 
       {/* Nav */}
-      <header className={`fixed inset-x-0 top-0 z-50 bg-white transition-all duration-500 ${scrolled ? "border-b border-[rgb(14_38_56/12%)] py-3 shadow-[0_1px_14px_rgb(14_38_56/6%)]" : "border-b border-[rgb(14_38_56/8%)] py-5"}`}>
+      <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "border-b border-border bg-background/90 py-3 backdrop-blur-md" : "py-6"}`}>
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 md:px-12">
           <a href="#top" aria-label="SEA — home" className="flex items-center gap-3">
-            <img src={logo.url} alt="SEA — Studio for Eclectic Architecture" className="h-10 w-auto rounded-[5px]" />
+            <span className="inline-flex items-center rounded-[5px] bg-white p-2">
+              <img src={logo.url} alt="SEA — Studio for Eclectic Architecture" className="h-9 w-auto" />
+            </span>
           </a>
           <nav aria-label="Primary" className="hidden gap-10 md:flex">
             {NAV.map(([l, h], i) => (
-              <a key={h} href={h} className="group text-[0.7rem] uppercase tracking-[0.28em] text-brand-deep transition-colors hover:text-brand-teal">
-                <span className="mr-2 text-brand-teal">0{i + 1}</span>{l}
+              <a key={h} href={h} className="group text-[0.7rem] uppercase tracking-[0.28em] text-foreground/80 transition-colors hover:text-foreground">
+                <span className="mr-2 text-bronze">0{i + 1}</span>{l}
               </a>
             ))}
           </nav>
-          <a href="#contact" className="btn-ghost hidden !px-5 !py-3 !text-brand-deep hover:!bg-brand-teal hover:!border-brand-teal hover:!text-white sm:inline-flex">Consult</a>
+          <a href="#contact" className="btn-ghost hidden !px-5 !py-3 sm:inline-flex">Consult</a>
         </div>
       </header>
 
